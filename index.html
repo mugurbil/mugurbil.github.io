@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Stability on TieNet</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-28"><meta name="DC.source" content="index.m"><style type="text/css">
+      --><title>Stability on TieNet</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-01"><meta name="DC.source" content="index.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,118 +66,144 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Stability on TieNet</h1><!--introduction--><p>Mehmet Ugurbil</p><p>Unversity of Minnesota</p><p>28-Feb-2018</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Breakdown of Stability</a></li><li><a href="#2">The End</a></li></ul></div><h2 id="1">Breakdown of Stability</h2><p>RedNet = TieNet with multiplicity removed</p><p>
+  </style></head><body><div class="content"><h1>Stability on TieNet</h1><!--introduction--><p>Mehmet Ugurbil</p><p>Unversity of Minnesota</p><p>01-Mar-2018</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Breakdown of Stability</a></li><li><a href="#2">Stable Variable Performance</a></li><li><a href="#3">The End</a></li></ul></div><h2 id="1">Breakdown of Stability</h2><p>RedNet = TieNet with multiplicity removed</p><p>
 <body>
+<button onclick="myFunction('StabilityType')"> Show/Hide </button>
 <form name="change">
 <select name="options_1" onChange="document.getElementById('iframe_1').src = this.options[this.selectedIndex].value">
-<option value=""> Frame 1 </option>
-<option value="results/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
-<option value="results/TieNet_50_1/main.html"> TieNet HPC 50 </option>
-<option value="results/TieNet_100_1/main.html"> TieNet HPC 100 </option>
-<option value="results/TieNet_200_1/main.html"> TieNet HPC 200 </option>
-<option value="results/TieNet_300_1/main.html"> TieNet HPC 300 </option>
-<option value="results/TieNet_400_1/main.html"> TieNet HPC 400 </option>
-<option value="results/TieNet_500_1/main.html"> TieNet HPC 500 </option>
-<option value="results/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
-<option value="results/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
-<option value="results/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
-<option value="results/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
-<option value="results/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
-<option value="results/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
-<option value="results/TieNet_50_2/main.html"> TieNet RFE 50 </option>
-<option value="results/TieNet_100_2/main.html"> TieNet RFE 100 </option>
-<option value="results/TieNet_200_2/main.html"> TieNet RFE 200 </option>
-<option value="results/TieNet_300_2/main.html"> TieNet RFE 300 </option>
-<option value="results/TieNet_400_2/main.html"> TieNet RFE 400 </option>
-<option value="results/TieNet_500_2/main.html"> TieNet RFE 500 </option>
-<option value="results/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
-<option value="results/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
-<option value="results/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
-<option value="results/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
-<option value="results/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
-<option value="results/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
-<option value="results/RedNet_50_1/main.html"> RedNet HPC 50 </option>
-<option value="results/RedNet_100_1/main.html"> RedNet HPC 100 </option>
-<option value="results/RedNet_200_1/main.html"> RedNet HPC 200 </option>
-<option value="results/RedNet_300_1/main.html"> RedNet HPC 300 </option>
-<option value="results/RedNet_400_1/main.html"> RedNet HPC 400 </option>
-<option value="results/RedNet_500_1/main.html"> RedNet HPC 500 </option>
-<option value="results/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
-<option value="results/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
-<option value="results/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
-<option value="results/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
-<option value="results/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
-<option value="results/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
-<option value="results/RedNet_50_2/main.html"> RedNet RFE 50 </option>
-<option value="results/RedNet_100_2/main.html"> RedNet RFE 100 </option>
-<option value="results/RedNet_200_2/main.html"> RedNet RFE 200 </option>
-<option value="results/RedNet_300_2/main.html"> RedNet RFE 300 </option>
-<option value="results/RedNet_400_2/main.html"> RedNet RFE 400 </option>
-<option value="results/RedNet_500_2/main.html"> RedNet RFE 500 </option>
-<option value="results/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
-<option value="results/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
-<option value="results/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
-<option value="results/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
-<option value="results/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
+<option value="StabilityType/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
+<option value="StabilityType/TieNet_50_1/main.html"> TieNet HPC 50 </option>
+<option value="StabilityType/TieNet_100_1/main.html"> TieNet HPC 100 </option>
+<option value="StabilityType/TieNet_200_1/main.html"> TieNet HPC 200 </option>
+<option value="StabilityType/TieNet_300_1/main.html"> TieNet HPC 300 </option>
+<option value="StabilityType/TieNet_400_1/main.html"> TieNet HPC 400 </option>
+<option value="StabilityType/TieNet_500_1/main.html"> TieNet HPC 500 </option>
+<option value="StabilityType/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
+<option value="StabilityType/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
+<option value="StabilityType/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
+<option value="StabilityType/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
+<option value="StabilityType/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
+<option value="StabilityType/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
+<option value="StabilityType/TieNet_50_2/main.html"> TieNet RFE 50 </option>
+<option value="StabilityType/TieNet_100_2/main.html"> TieNet RFE 100 </option>
+<option value="StabilityType/TieNet_200_2/main.html"> TieNet RFE 200 </option>
+<option value="StabilityType/TieNet_300_2/main.html"> TieNet RFE 300 </option>
+<option value="StabilityType/TieNet_400_2/main.html"> TieNet RFE 400 </option>
+<option value="StabilityType/TieNet_500_2/main.html"> TieNet RFE 500 </option>
+<option value="StabilityType/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
+<option value="StabilityType/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
+<option value="StabilityType/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
+<option value="StabilityType/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
+<option value="StabilityType/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
+<option value="StabilityType/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
+<option value="StabilityType/RedNet_50_1/main.html"> RedNet HPC 50 </option>
+<option value="StabilityType/RedNet_100_1/main.html"> RedNet HPC 100 </option>
+<option value="StabilityType/RedNet_200_1/main.html"> RedNet HPC 200 </option>
+<option value="StabilityType/RedNet_300_1/main.html"> RedNet HPC 300 </option>
+<option value="StabilityType/RedNet_400_1/main.html"> RedNet HPC 400 </option>
+<option value="StabilityType/RedNet_500_1/main.html"> RedNet HPC 500 </option>
+<option value="StabilityType/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
+<option value="StabilityType/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
+<option value="StabilityType/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
+<option value="StabilityType/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
+<option value="StabilityType/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
+<option value="StabilityType/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
+<option value="StabilityType/RedNet_50_2/main.html"> RedNet RFE 50 </option>
+<option value="StabilityType/RedNet_100_2/main.html"> RedNet RFE 100 </option>
+<option value="StabilityType/RedNet_200_2/main.html"> RedNet RFE 200 </option>
+<option value="StabilityType/RedNet_300_2/main.html"> RedNet RFE 300 </option>
+<option value="StabilityType/RedNet_400_2/main.html"> RedNet RFE 400 </option>
+<option value="StabilityType/RedNet_500_2/main.html"> RedNet RFE 500 </option>
+<option value="StabilityType/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
+<option value="StabilityType/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
+<option value="StabilityType/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
+<option value="StabilityType/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
+<option value="StabilityType/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
 </select>
 <form name="change">
 <select name="options_2" onChange="document.getElementById('iframe_2').src = this.options[this.selectedIndex].value">
-<option value=""> Frame 2 </option>
-<option value="results/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
-<option value="results/TieNet_50_1/main.html"> TieNet HPC 50 </option>
-<option value="results/TieNet_100_1/main.html"> TieNet HPC 100 </option>
-<option value="results/TieNet_200_1/main.html"> TieNet HPC 200 </option>
-<option value="results/TieNet_300_1/main.html"> TieNet HPC 300 </option>
-<option value="results/TieNet_400_1/main.html"> TieNet HPC 400 </option>
-<option value="results/TieNet_500_1/main.html"> TieNet HPC 500 </option>
-<option value="results/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
-<option value="results/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
-<option value="results/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
-<option value="results/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
-<option value="results/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
-<option value="results/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
-<option value="results/TieNet_50_2/main.html"> TieNet RFE 50 </option>
-<option value="results/TieNet_100_2/main.html"> TieNet RFE 100 </option>
-<option value="results/TieNet_200_2/main.html"> TieNet RFE 200 </option>
-<option value="results/TieNet_300_2/main.html"> TieNet RFE 300 </option>
-<option value="results/TieNet_400_2/main.html"> TieNet RFE 400 </option>
-<option value="results/TieNet_500_2/main.html"> TieNet RFE 500 </option>
-<option value="results/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
-<option value="results/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
-<option value="results/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
-<option value="results/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
-<option value="results/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
-<option value="results/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
-<option value="results/RedNet_50_1/main.html"> RedNet HPC 50 </option>
-<option value="results/RedNet_100_1/main.html"> RedNet HPC 100 </option>
-<option value="results/RedNet_200_1/main.html"> RedNet HPC 200 </option>
-<option value="results/RedNet_300_1/main.html"> RedNet HPC 300 </option>
-<option value="results/RedNet_400_1/main.html"> RedNet HPC 400 </option>
-<option value="results/RedNet_500_1/main.html"> RedNet HPC 500 </option>
-<option value="results/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
-<option value="results/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
-<option value="results/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
-<option value="results/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
-<option value="results/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
-<option value="results/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
-<option value="results/RedNet_50_2/main.html"> RedNet RFE 50 </option>
-<option value="results/RedNet_100_2/main.html"> RedNet RFE 100 </option>
-<option value="results/RedNet_200_2/main.html"> RedNet RFE 200 </option>
-<option value="results/RedNet_300_2/main.html"> RedNet RFE 300 </option>
-<option value="results/RedNet_400_2/main.html"> RedNet RFE 400 </option>
-<option value="results/RedNet_500_2/main.html"> RedNet RFE 500 </option>
-<option value="results/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
-<option value="results/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
-<option value="results/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
-<option value="results/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
-<option value="results/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
+<option value="StabilityType/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
+<option value="StabilityType/TieNet_50_1/main.html"> TieNet HPC 50 </option>
+<option value="StabilityType/TieNet_100_1/main.html"> TieNet HPC 100 </option>
+<option value="StabilityType/TieNet_200_1/main.html"> TieNet HPC 200 </option>
+<option value="StabilityType/TieNet_300_1/main.html"> TieNet HPC 300 </option>
+<option value="StabilityType/TieNet_400_1/main.html"> TieNet HPC 400 </option>
+<option value="StabilityType/TieNet_500_1/main.html"> TieNet HPC 500 </option>
+<option value="StabilityType/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
+<option value="StabilityType/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
+<option value="StabilityType/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
+<option value="StabilityType/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
+<option value="StabilityType/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
+<option value="StabilityType/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
+<option value="StabilityType/TieNet_50_2/main.html"> TieNet RFE 50 </option>
+<option value="StabilityType/TieNet_100_2/main.html"> TieNet RFE 100 </option>
+<option value="StabilityType/TieNet_200_2/main.html"> TieNet RFE 200 </option>
+<option value="StabilityType/TieNet_300_2/main.html"> TieNet RFE 300 </option>
+<option value="StabilityType/TieNet_400_2/main.html"> TieNet RFE 400 </option>
+<option value="StabilityType/TieNet_500_2/main.html"> TieNet RFE 500 </option>
+<option value="StabilityType/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
+<option value="StabilityType/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
+<option value="StabilityType/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
+<option value="StabilityType/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
+<option value="StabilityType/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
+<option value="StabilityType/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
+<option value="StabilityType/RedNet_50_1/main.html"> RedNet HPC 50 </option>
+<option value="StabilityType/RedNet_100_1/main.html"> RedNet HPC 100 </option>
+<option value="StabilityType/RedNet_200_1/main.html"> RedNet HPC 200 </option>
+<option value="StabilityType/RedNet_300_1/main.html"> RedNet HPC 300 </option>
+<option value="StabilityType/RedNet_400_1/main.html"> RedNet HPC 400 </option>
+<option value="StabilityType/RedNet_500_1/main.html"> RedNet HPC 500 </option>
+<option value="StabilityType/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
+<option value="StabilityType/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
+<option value="StabilityType/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
+<option value="StabilityType/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
+<option value="StabilityType/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
+<option value="StabilityType/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
+<option value="StabilityType/RedNet_50_2/main.html"> RedNet RFE 50 </option>
+<option value="StabilityType/RedNet_100_2/main.html"> RedNet RFE 100 </option>
+<option value="StabilityType/RedNet_200_2/main.html"> RedNet RFE 200 </option>
+<option value="StabilityType/RedNet_300_2/main.html"> RedNet RFE 300 </option>
+<option value="StabilityType/RedNet_400_2/main.html"> RedNet RFE 400 </option>
+<option value="StabilityType/RedNet_500_2/main.html"> RedNet RFE 500 </option>
+<option value="StabilityType/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
+<option value="StabilityType/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
+<option value="StabilityType/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
+<option value="StabilityType/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
+<option value="StabilityType/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
 </select>
-<p>
-<iframe name="iframe" id="iframe_1" src="" width = 800 height = 1000></iframe>
-<iframe name="iframe" id="iframe_2" src="" width = 800 height = 1000></iframe>
-</p>
+</form>
+<div id="StabilityType" style="display: none;">
+<iframe name="iframe" id="iframe_1" src="" width = 750 height = 1000></iframe>
+<iframe name="iframe" id="iframe_2" src="" width = 750 height = 1000></iframe>
+</div>
 </body>
-</p><h2 id="2">The End</h2><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+</p><h2 id="2">Stable Variable Performance</h2><p>
+<body>
+<button onclick="myFunction('StableVars')"> Show/Hide </button>
+<form name="change">
+<select name="options_1" onChange="document.getElementById('iframe_3').src = this.options[this.selectedIndex].value">
+<option value="StableVars/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
+<option value="StableVars/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
+<option value="StableVars/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
+<option value="StableVars/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
+</select>
+</form>
+<div id="StableVars" style="display: none;">
+<iframe name="iframe" id="iframe_3" src="" width = 1000 height = 1000></iframe>
+</div>
+</body>
+</p><h2 id="3">The End</h2><p>
+<script>
+function myFunction(x) {
+    var x = document.getElementById(x);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% Stability on TieNet
 %
@@ -185,7 +211,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 %
 % Unversity of Minnesota
 %
-% 28-Feb-2018
+% 01-Mar-2018
 
 %% Breakdown of Stability
 %
@@ -193,118 +219,150 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 %
 % <html>
 % <body>
+% <button onclick="myFunction('StabilityType')"> Show/Hide </button>
 % <form name="change">
 % <select name="options_1" onChange="document.getElementById('iframe_1').src = this.options[this.selectedIndex].value">
-% <option value=""> Frame 1 </option>
-% <option value="results/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
-% <option value="results/TieNet_50_1/main.html"> TieNet HPC 50 </option>
-% <option value="results/TieNet_100_1/main.html"> TieNet HPC 100 </option>
-% <option value="results/TieNet_200_1/main.html"> TieNet HPC 200 </option>
-% <option value="results/TieNet_300_1/main.html"> TieNet HPC 300 </option>
-% <option value="results/TieNet_400_1/main.html"> TieNet HPC 400 </option>
-% <option value="results/TieNet_500_1/main.html"> TieNet HPC 500 </option>
-% <option value="results/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
-% <option value="results/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
-% <option value="results/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
-% <option value="results/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
-% <option value="results/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
-% <option value="results/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
-% <option value="results/TieNet_50_2/main.html"> TieNet RFE 50 </option>
-% <option value="results/TieNet_100_2/main.html"> TieNet RFE 100 </option>
-% <option value="results/TieNet_200_2/main.html"> TieNet RFE 200 </option>
-% <option value="results/TieNet_300_2/main.html"> TieNet RFE 300 </option>
-% <option value="results/TieNet_400_2/main.html"> TieNet RFE 400 </option>
-% <option value="results/TieNet_500_2/main.html"> TieNet RFE 500 </option>
-% <option value="results/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
-% <option value="results/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
-% <option value="results/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
-% <option value="results/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
-% <option value="results/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
-% <option value="results/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
-% <option value="results/RedNet_50_1/main.html"> RedNet HPC 50 </option>
-% <option value="results/RedNet_100_1/main.html"> RedNet HPC 100 </option>
-% <option value="results/RedNet_200_1/main.html"> RedNet HPC 200 </option>
-% <option value="results/RedNet_300_1/main.html"> RedNet HPC 300 </option>
-% <option value="results/RedNet_400_1/main.html"> RedNet HPC 400 </option>
-% <option value="results/RedNet_500_1/main.html"> RedNet HPC 500 </option>
-% <option value="results/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
-% <option value="results/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
-% <option value="results/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
-% <option value="results/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
-% <option value="results/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
-% <option value="results/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
-% <option value="results/RedNet_50_2/main.html"> RedNet RFE 50 </option>
-% <option value="results/RedNet_100_2/main.html"> RedNet RFE 100 </option>
-% <option value="results/RedNet_200_2/main.html"> RedNet RFE 200 </option>
-% <option value="results/RedNet_300_2/main.html"> RedNet RFE 300 </option>
-% <option value="results/RedNet_400_2/main.html"> RedNet RFE 400 </option>
-% <option value="results/RedNet_500_2/main.html"> RedNet RFE 500 </option>
-% <option value="results/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
-% <option value="results/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
-% <option value="results/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
-% <option value="results/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
-% <option value="results/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
+% <option value="StabilityType/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
+% <option value="StabilityType/TieNet_50_1/main.html"> TieNet HPC 50 </option>
+% <option value="StabilityType/TieNet_100_1/main.html"> TieNet HPC 100 </option>
+% <option value="StabilityType/TieNet_200_1/main.html"> TieNet HPC 200 </option>
+% <option value="StabilityType/TieNet_300_1/main.html"> TieNet HPC 300 </option>
+% <option value="StabilityType/TieNet_400_1/main.html"> TieNet HPC 400 </option>
+% <option value="StabilityType/TieNet_500_1/main.html"> TieNet HPC 500 </option>
+% <option value="StabilityType/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
+% <option value="StabilityType/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
+% <option value="StabilityType/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
+% <option value="StabilityType/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
+% <option value="StabilityType/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
+% <option value="StabilityType/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
+% <option value="StabilityType/TieNet_50_2/main.html"> TieNet RFE 50 </option>
+% <option value="StabilityType/TieNet_100_2/main.html"> TieNet RFE 100 </option>
+% <option value="StabilityType/TieNet_200_2/main.html"> TieNet RFE 200 </option>
+% <option value="StabilityType/TieNet_300_2/main.html"> TieNet RFE 300 </option>
+% <option value="StabilityType/TieNet_400_2/main.html"> TieNet RFE 400 </option>
+% <option value="StabilityType/TieNet_500_2/main.html"> TieNet RFE 500 </option>
+% <option value="StabilityType/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
+% <option value="StabilityType/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
+% <option value="StabilityType/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
+% <option value="StabilityType/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
+% <option value="StabilityType/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
+% <option value="StabilityType/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
+% <option value="StabilityType/RedNet_50_1/main.html"> RedNet HPC 50 </option>
+% <option value="StabilityType/RedNet_100_1/main.html"> RedNet HPC 100 </option>
+% <option value="StabilityType/RedNet_200_1/main.html"> RedNet HPC 200 </option>
+% <option value="StabilityType/RedNet_300_1/main.html"> RedNet HPC 300 </option>
+% <option value="StabilityType/RedNet_400_1/main.html"> RedNet HPC 400 </option>
+% <option value="StabilityType/RedNet_500_1/main.html"> RedNet HPC 500 </option>
+% <option value="StabilityType/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
+% <option value="StabilityType/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
+% <option value="StabilityType/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
+% <option value="StabilityType/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
+% <option value="StabilityType/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
+% <option value="StabilityType/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
+% <option value="StabilityType/RedNet_50_2/main.html"> RedNet RFE 50 </option>
+% <option value="StabilityType/RedNet_100_2/main.html"> RedNet RFE 100 </option>
+% <option value="StabilityType/RedNet_200_2/main.html"> RedNet RFE 200 </option>
+% <option value="StabilityType/RedNet_300_2/main.html"> RedNet RFE 300 </option>
+% <option value="StabilityType/RedNet_400_2/main.html"> RedNet RFE 400 </option>
+% <option value="StabilityType/RedNet_500_2/main.html"> RedNet RFE 500 </option>
+% <option value="StabilityType/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
+% <option value="StabilityType/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
+% <option value="StabilityType/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
+% <option value="StabilityType/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
+% <option value="StabilityType/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
 % </select>
 % <form name="change">
 % <select name="options_2" onChange="document.getElementById('iframe_2').src = this.options[this.selectedIndex].value">
-% <option value=""> Frame 2 </option>
-% <option value="results/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
-% <option value="results/TieNet_50_1/main.html"> TieNet HPC 50 </option>
-% <option value="results/TieNet_100_1/main.html"> TieNet HPC 100 </option>
-% <option value="results/TieNet_200_1/main.html"> TieNet HPC 200 </option>
-% <option value="results/TieNet_300_1/main.html"> TieNet HPC 300 </option>
-% <option value="results/TieNet_400_1/main.html"> TieNet HPC 400 </option>
-% <option value="results/TieNet_500_1/main.html"> TieNet HPC 500 </option>
-% <option value="results/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
-% <option value="results/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
-% <option value="results/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
-% <option value="results/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
-% <option value="results/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
-% <option value="results/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
-% <option value="results/TieNet_50_2/main.html"> TieNet RFE 50 </option>
-% <option value="results/TieNet_100_2/main.html"> TieNet RFE 100 </option>
-% <option value="results/TieNet_200_2/main.html"> TieNet RFE 200 </option>
-% <option value="results/TieNet_300_2/main.html"> TieNet RFE 300 </option>
-% <option value="results/TieNet_400_2/main.html"> TieNet RFE 400 </option>
-% <option value="results/TieNet_500_2/main.html"> TieNet RFE 500 </option>
-% <option value="results/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
-% <option value="results/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
-% <option value="results/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
-% <option value="results/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
-% <option value="results/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
-% <option value="results/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
-% <option value="results/RedNet_50_1/main.html"> RedNet HPC 50 </option>
-% <option value="results/RedNet_100_1/main.html"> RedNet HPC 100 </option>
-% <option value="results/RedNet_200_1/main.html"> RedNet HPC 200 </option>
-% <option value="results/RedNet_300_1/main.html"> RedNet HPC 300 </option>
-% <option value="results/RedNet_400_1/main.html"> RedNet HPC 400 </option>
-% <option value="results/RedNet_500_1/main.html"> RedNet HPC 500 </option>
-% <option value="results/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
-% <option value="results/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
-% <option value="results/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
-% <option value="results/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
-% <option value="results/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
-% <option value="results/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
-% <option value="results/RedNet_50_2/main.html"> RedNet RFE 50 </option>
-% <option value="results/RedNet_100_2/main.html"> RedNet RFE 100 </option>
-% <option value="results/RedNet_200_2/main.html"> RedNet RFE 200 </option>
-% <option value="results/RedNet_300_2/main.html"> RedNet RFE 300 </option>
-% <option value="results/RedNet_400_2/main.html"> RedNet RFE 400 </option>
-% <option value="results/RedNet_500_2/main.html"> RedNet RFE 500 </option>
-% <option value="results/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
-% <option value="results/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
-% <option value="results/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
-% <option value="results/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
-% <option value="results/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
+% <option value="StabilityType/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
+% <option value="StabilityType/TieNet_50_1/main.html"> TieNet HPC 50 </option>
+% <option value="StabilityType/TieNet_100_1/main.html"> TieNet HPC 100 </option>
+% <option value="StabilityType/TieNet_200_1/main.html"> TieNet HPC 200 </option>
+% <option value="StabilityType/TieNet_300_1/main.html"> TieNet HPC 300 </option>
+% <option value="StabilityType/TieNet_400_1/main.html"> TieNet HPC 400 </option>
+% <option value="StabilityType/TieNet_500_1/main.html"> TieNet HPC 500 </option>
+% <option value="StabilityType/TieNet_1000_1/main.html"> TieNet HPC 1000 </option>
+% <option value="StabilityType/TieNet_2000_1/main.html"> TieNet HPC 2000 </option>
+% <option value="StabilityType/TieNet_5000_1/main.html"> TieNet HPC 5000 </option>
+% <option value="StabilityType/TieNet_10000_1/main.html"> TieNet HPC 10000 </option>
+% <option value="StabilityType/TieNet_100000_1/main.html"> TieNet HPC 100000 </option>
+% <option value="StabilityType/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
+% <option value="StabilityType/TieNet_50_2/main.html"> TieNet RFE 50 </option>
+% <option value="StabilityType/TieNet_100_2/main.html"> TieNet RFE 100 </option>
+% <option value="StabilityType/TieNet_200_2/main.html"> TieNet RFE 200 </option>
+% <option value="StabilityType/TieNet_300_2/main.html"> TieNet RFE 300 </option>
+% <option value="StabilityType/TieNet_400_2/main.html"> TieNet RFE 400 </option>
+% <option value="StabilityType/TieNet_500_2/main.html"> TieNet RFE 500 </option>
+% <option value="StabilityType/TieNet_1000_2/main.html"> TieNet RFE 1000 </option>
+% <option value="StabilityType/TieNet_2000_2/main.html"> TieNet RFE 2000 </option>
+% <option value="StabilityType/TieNet_5000_2/main.html"> TieNet RFE 5000 </option>
+% <option value="StabilityType/TieNet_10000_2/main.html"> TieNet RFE 10000 </option>
+% <option value="StabilityType/TieNet_100000_2/main.html"> TieNet RFE 100000 </option>
+% <option value="StabilityType/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
+% <option value="StabilityType/RedNet_50_1/main.html"> RedNet HPC 50 </option>
+% <option value="StabilityType/RedNet_100_1/main.html"> RedNet HPC 100 </option>
+% <option value="StabilityType/RedNet_200_1/main.html"> RedNet HPC 200 </option>
+% <option value="StabilityType/RedNet_300_1/main.html"> RedNet HPC 300 </option>
+% <option value="StabilityType/RedNet_400_1/main.html"> RedNet HPC 400 </option>
+% <option value="StabilityType/RedNet_500_1/main.html"> RedNet HPC 500 </option>
+% <option value="StabilityType/RedNet_1000_1/main.html"> RedNet HPC 1000 </option>
+% <option value="StabilityType/RedNet_2000_1/main.html"> RedNet HPC 2000 </option>
+% <option value="StabilityType/RedNet_5000_1/main.html"> RedNet HPC 5000 </option>
+% <option value="StabilityType/RedNet_10000_1/main.html"> RedNet HPC 10000 </option>
+% <option value="StabilityType/RedNet_100000_1/main.html"> RedNet HPC 100000 </option>
+% <option value="StabilityType/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
+% <option value="StabilityType/RedNet_50_2/main.html"> RedNet RFE 50 </option>
+% <option value="StabilityType/RedNet_100_2/main.html"> RedNet RFE 100 </option>
+% <option value="StabilityType/RedNet_200_2/main.html"> RedNet RFE 200 </option>
+% <option value="StabilityType/RedNet_300_2/main.html"> RedNet RFE 300 </option>
+% <option value="StabilityType/RedNet_400_2/main.html"> RedNet RFE 400 </option>
+% <option value="StabilityType/RedNet_500_2/main.html"> RedNet RFE 500 </option>
+% <option value="StabilityType/RedNet_1000_2/main.html"> RedNet RFE 1000 </option>
+% <option value="StabilityType/RedNet_2000_2/main.html"> RedNet RFE 2000 </option>
+% <option value="StabilityType/RedNet_5000_2/main.html"> RedNet RFE 5000 </option>
+% <option value="StabilityType/RedNet_10000_2/main.html"> RedNet RFE 10000 </option>
+% <option value="StabilityType/RedNet_100000_2/main.html"> RedNet RFE 100000 </option>
 % </select>
-% <p>
-% <iframe name="iframe" id="iframe_1" src="" width = 800 height = 1000></iframe>
-% <iframe name="iframe" id="iframe_2" src="" width = 800 height = 1000></iframe>
-% </p>
+% </form>
+% <div id="StabilityType" style="display: none;">
+% <iframe name="iframe" id="iframe_1" src="" width = 750 height = 1000></iframe>
+% <iframe name="iframe" id="iframe_2" src="" width = 750 height = 1000></iframe>
+% </div>
 % </body>
 % </html>
 
- %% The End
+%% Stable Variable Performance
+%
+% <html>
+% <body>
+% <button onclick="myFunction('StableVars')"> Show/Hide </button>
+% <form name="change">
+% <select name="options_1" onChange="document.getElementById('iframe_3').src = this.options[this.selectedIndex].value">
+% <option value="StableVars/Summary_TieNet_HPC/main.html"> SUMMARY TieNet HPC </option>
+% <option value="StableVars/Summary_TieNet_RFE/main.html"> SUMMARY TieNet RFE </option>
+% <option value="StableVars/Summary_RedNet_HPC/main.html"> SUMMARY RedNet HPC </option>
+% <option value="StableVars/Summary_RedNet_RFE/main.html"> SUMMARY RedNet RFE </option>
+% </select>
+% </form>
+% <div id="StableVars" style="display: none;">
+% <iframe name="iframe" id="iframe_3" src="" width = 1000 height = 1000></iframe>
+% </div>
+% </body>
+% </html>
+
+%% The End
+%
+% <html>
+% <script>
+% function myFunction(x) {
+%     var x = document.getElementById(x);
+%     if (x.style.display === "none") {
+%         x.style.display = "block";
+%     } else {
+%         x.style.display = "none";
+%     }
+% }
+% </script>
+% </html>
 
 ##### SOURCE END #####
 --></body></html>
