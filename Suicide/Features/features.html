@@ -70,12 +70,11 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 <body>
 <button onclick="myFunction('FeatureTable')"> Show/Hide </button>
 <div id="FeatureTable" style="display: none;">
-<iframe name="iframe" id="iframe_1" src="table/main.html" width = 1000 height = 1000></iframe>
+<iframe name="iframe" id="iframe_1" src="table/main.html" width=1000 height=2000></iframe>
 </div>
 </body>
 </p><h2 id="2">Feature Frequency Plots</h2><p>
 <body>
-<button onclick="myFunction('FeaturePlot')"> Show/Hide </button>
 <form name="change">
 <select name="options_2" onChange="document.getElementById('iframe_2').src = this.options[this.selectedIndex].value">
 <option value=""> Choose </option>
@@ -169,8 +168,8 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 <option value="feature_2048/main.html"> Feature 2048. AGE210. </option>
 </select>
 </form>
-<div id="FeaturePlot" style="display: none;">
-<iframe name="iframe" id="iframe_2" src="" width = 1000 height = 1000></iframe>
+<div id="FeaturePlot">
+<iframe name="iframe" id="iframe_2" src="" width=1000 height=1000></iframe>
 </div>
 </body>
 </p><h2 id="3">The End</h2><p>
@@ -200,7 +199,7 @@ function myFunction(x) {
 % <body>
 % <button onclick="myFunction('FeatureTable')"> Show/Hide </button>
 % <div id="FeatureTable" style="display: none;">
-% <iframe name="iframe" id="iframe_1" src="table/main.html" width = 1000 height = 1000></iframe>
+% <iframe name="iframe" id="iframe_1" src="table/main.html" width=1000 height=2000></iframe>
 % </div>
 % </body>
 % </html>
@@ -209,7 +208,6 @@ function myFunction(x) {
 %
 % <html>
 % <body>
-% <button onclick="myFunction('FeaturePlot')"> Show/Hide </button>
 % <form name="change">
 % <select name="options_2" onChange="document.getElementById('iframe_2').src = this.options[this.selectedIndex].value">
 % <option value=""> Choose </option>
@@ -303,8 +301,8 @@ function myFunction(x) {
 % <option value="feature_2048/main.html"> Feature 2048. AGE210. </option>
 % </select>
 % </form>
-% <div id="FeaturePlot" style="display: none;">
-% <iframe name="iframe" id="iframe_2" src="" width = 1000 height = 1000></iframe>
+% <div id="FeaturePlot">
+% <iframe name="iframe" id="iframe_2" src="" width=1000 height=1000></iframe>
 % </div>
 % </body>
 % </html>
