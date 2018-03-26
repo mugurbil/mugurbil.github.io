@@ -1,0 +1,753 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>MltNet. Sample Size: 500. RFE.</title><meta name="generator" content="MATLAB 9.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-26"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>MltNet. Sample Size: 500. RFE.</h1><pre class="codeinput">unit_stability_type(500, 2, <span class="string">"MltNet"</span>)
+</pre><pre class="codeoutput">Table 67. Stability by Type. Sample Size: 500, RFE.
+____________________________________________________
+
+SELECTED COUNTS: Strong:=23, Weak=640, Irrelevant=0
+TOTAL COUNTS:    Strong:=23, Weak=1300, Irrelevant=4
+
+
+    Feature_Number    Stability        Type        Path_Length    N_MBS
+    ______________    _________    ____________    ___________    _____
+
+      21              ' 0.410 '    '  STRONG  '     1                0 
+      22              ' 0.398 '    '  STRONG  '     2                0 
+      23              ' 0.376 '    '  STRONG  '     3                0 
+      19              ' 0.198 '    '  STRONG  '     2                0 
+      20              ' 0.186 '    '  STRONG  '     3                0 
+      18              ' 0.176 '    '  STRONG  '     1                0 
+       1              ' 0.034 '    '  STRONG  '     1                0 
+       3              ' 0.034 '    '  STRONG  '     4                0 
+      40              ' 0.034 '    '   weak   '     3                0 
+      71              ' 0.034 '    '   weak   '     3                0 
+       4              ' 0.032 '    '  STRONG  '     4                0 
+      97              ' 0.032 '    '   weak   '     3                0 
+       2              ' 0.030 '    '  STRONG  '     2                0 
+       5              ' 0.030 '    '  STRONG  '     3                0 
+      39              ' 0.030 '    '   weak   '     4                0 
+     123              ' 0.030 '    '   weak   '     3                0 
+      70              ' 0.028 '    '   weak   '     4                0 
+      96              ' 0.028 '    '   weak   '     4                0 
+     122              ' 0.028 '    '   weak   '     4                0 
+     149              ' 0.028 '    '   weak   '     3                0 
+     175              ' 0.028 '    '   weak   '     3                0 
+     201              ' 0.028 '    '   weak   '     3                0 
+       6              ' 0.026 '    '  STRONG  '     3                0 
+       7              ' 0.026 '    '  STRONG  '     1                0 
+       9              ' 0.026 '    '  STRONG  '     3                0 
+      11              ' 0.026 '    '  STRONG  '     4                0 
+       8              ' 0.024 '    '  STRONG  '     2                0 
+      10              ' 0.024 '    '  STRONG  '     4                0 
+     148              ' 0.024 '    '   weak   '     4                0 
+     174              ' 0.024 '    '   weak   '     4                0 
+     200              ' 0.024 '    '   weak   '     4                0 
+     226              ' 0.024 '    '   weak   '     4                0 
+     227              ' 0.024 '    '   weak   '     3                0 
+     252              ' 0.024 '    '   weak   '     4                0 
+     253              ' 0.024 '    '   weak   '     3                0 
+      17              ' 0.022 '    '  STRONG  '     4              270 
+     279              ' 0.022 '    '   weak   '     3              270 
+     305              ' 0.022 '    '   weak   '     3              270 
+     331              ' 0.022 '    '   weak   '     3              270 
+     357              ' 0.022 '    '   weak   '     3              270 
+     383              ' 0.022 '    '   weak   '     3              270 
+     409              ' 0.022 '    '   weak   '     3              270 
+     435              ' 0.022 '    '   weak   '     3              270 
+      13              ' 0.020 '    '  STRONG  '     2              540 
+      14              ' 0.020 '    '  STRONG  '     3              810 
+      16              ' 0.020 '    '  STRONG  '     2             1080 
+      28              ' 0.020 '    '   weak   '     5             1080 
+      59              ' 0.020 '    '   weak   '     5             1080 
+      85              ' 0.020 '    '   weak   '     5             1080 
+     111              ' 0.020 '    '   weak   '     5             1080 
+     278              ' 0.020 '    '   weak   '     4             1080 
+     304              ' 0.020 '    '   weak   '     4             1080 
+     330              ' 0.020 '    '   weak   '     4             1080 
+     356              ' 0.020 '    '   weak   '     4             1080 
+     382              ' 0.020 '    '   weak   '     4             1080 
+     408              ' 0.020 '    '   weak   '     4             1080 
+      12              ' 0.018 '    '  STRONG  '     1             1350 
+      15              ' 0.018 '    '  STRONG  '     3             1620 
+     137              ' 0.018 '    '   weak   '     5             1620 
+     434              ' 0.018 '    '   weak   '     4             1620 
+     460              ' 0.018 '    '   weak   '     4             1620 
+     461              ' 0.018 '    '   weak   '     3             1620 
+     486              ' 0.018 '    '   weak   '     4             1620 
+     487              ' 0.018 '    '   weak   '     3             1620 
+     512              ' 0.018 '    '   weak   '     4             1620 
+     513              ' 0.018 '    '   weak   '     3             1620 
+     538              ' 0.018 '    '   weak   '     4             1620 
+     539              ' 0.018 '    '   weak   '     3             1620 
+     564              ' 0.018 '    '   weak   '     4             1620 
+     565              ' 0.018 '    '   weak   '     3             1620 
+     591              ' 0.018 '    '   weak   '     3             1620 
+     617              ' 0.018 '    '   weak   '     3             1620 
+     643              ' 0.018 '    '   weak   '     3             1620 
+     669              ' 0.018 '    '   weak   '     3             1620 
+     695              ' 0.018 '    '   weak   '     3             1620 
+     721              ' 0.018 '    '   weak   '     3             1620 
+     747              ' 0.018 '    '   weak   '     3             1620 
+     773              ' 0.018 '    '   weak   '     3             1620 
+     163              ' 0.016 '    '   weak   '     5             1620 
+     189              ' 0.016 '    '   weak   '     5             1620 
+     215              ' 0.016 '    '   weak   '     5             1620 
+     799              ' 0.016 '    '   weak   '     3             1620 
+     825              ' 0.016 '    '   weak   '     3             1620 
+     851              ' 0.016 '    '   weak   '     3             1620 
+     877              ' 0.016 '    '   weak   '     3             1620 
+     903              ' 0.016 '    '   weak   '     3             1620 
+     929              ' 0.016 '    '   weak   '     3             1620 
+     590              ' 0.014 '    '   weak   '     4             1620 
+     616              ' 0.014 '    '   weak   '     4             1620 
+     642              ' 0.014 '    '   weak   '     4             1620 
+     668              ' 0.014 '    '   weak   '     4             1620 
+     694              ' 0.014 '    '   weak   '     4             1620 
+     720              ' 0.014 '    '   weak   '     4             1620 
+     746              ' 0.014 '    '   weak   '     4             1620 
+     772              ' 0.014 '    '   weak   '     4             1620 
+     798              ' 0.014 '    '   weak   '     4             1620 
+     955              ' 0.014 '    '   weak   '     3             1620 
+     981              ' 0.014 '    '   weak   '     3             1620 
+    1007              ' 0.014 '    '   weak   '     3             1620 
+    1033              ' 0.014 '    '   weak   '     3             1620 
+    1059              ' 0.014 '    '   weak   '     3             1620 
+    1085              ' 0.014 '    '   weak   '     3             1620 
+    1111              ' 0.014 '    '   weak   '     3             1620 
+    1137              ' 0.014 '    '   weak   '     3             1620 
+     241              ' 0.012 '    '   weak   '     5             1620 
+     267              ' 0.012 '    '   weak   '     5             1620 
+     824              ' 0.012 '    '   weak   '     4             1620 
+     850              ' 0.012 '    '   weak   '     4             1620 
+     876              ' 0.012 '    '   weak   '     4             1620 
+     902              ' 0.012 '    '   weak   '     4             1620 
+     928              ' 0.012 '    '   weak   '     4             1620 
+     954              ' 0.012 '    '   weak   '     4             1620 
+     980              ' 0.012 '    '   weak   '     4             1620 
+    1006              ' 0.012 '    '   weak   '     4             1620 
+    1032              ' 0.012 '    '   weak   '     4             1620 
+    1058              ' 0.012 '    '   weak   '     4             1620 
+    1084              ' 0.012 '    '   weak   '     4             1620 
+    1110              ' 0.012 '    '   weak   '     4             1620 
+    1136              ' 0.012 '    '   weak   '     4             1620 
+    1162              ' 0.012 '    '   weak   '     4             1620 
+    1163              ' 0.012 '    '   weak   '     3             1620 
+    1188              ' 0.012 '    '   weak   '     4             1620 
+    1189              ' 0.012 '    '   weak   '     3             1620 
+    1214              ' 0.012 '    '   weak   '     4             1620 
+    1215              ' 0.012 '    '   weak   '     3             1620 
+    1240              ' 0.012 '    '   weak   '     4             1620 
+    1241              ' 0.012 '    '   weak   '     3             1620 
+    1266              ' 0.012 '    '   weak   '     4             1620 
+    1267              ' 0.012 '    '   weak   '     3             1620 
+    1292              ' 0.012 '    '   weak   '     4             1620 
+    1293              ' 0.012 '    '   weak   '     3             1620 
+    1318              ' 0.012 '    '   weak   '     4             1620 
+    1319              ' 0.012 '    '   weak   '     3             1620 
+     293              ' 0.010 '    '   weak   '     5             1620 
+     319              ' 0.010 '    '   weak   '     5             1620 
+     345              ' 0.010 '    '   weak   '     5             1620 
+     371              ' 0.010 '    '   weak   '     5             1620 
+     397              ' 0.010 '    '   weak   '     5             1620 
+     423              ' 0.010 '    '   weak   '     5             1620 
+     449              ' 0.010 '    '   weak   '     5             1620 
+     475              ' 0.010 '    '   weak   '     5             1620 
+     501              ' 0.010 '    '   weak   '     5             1620 
+     527              ' 0.010 '    '   weak   '     5             1620 
+     553              ' 0.010 '    '   weak   '     5             1620 
+     579              ' 0.008 '    '   weak   '     5             1620 
+     605              ' 0.008 '    '   weak   '     5             1620 
+     631              ' 0.008 '    '   weak   '     5             1620 
+     657              ' 0.008 '    '   weak   '     5             1620 
+     683              ' 0.008 '    '   weak   '     5             1620 
+     709              ' 0.008 '    '   weak   '     5             1620 
+     735              ' 0.008 '    '   weak   '     5             1620 
+     761              ' 0.008 '    '   weak   '     5             1620 
+     787              ' 0.008 '    '   weak   '     5             1620 
+     813              ' 0.008 '    '   weak   '     5             1620 
+     839              ' 0.008 '    '   weak   '     5             1620 
+     865              ' 0.008 '    '   weak   '     5             1620 
+     891              ' 0.008 '    '   weak   '     5             1620 
+     917              ' 0.008 '    '   weak   '     5             1620 
+     943              ' 0.008 '    '   weak   '     5             1620 
+     969              ' 0.008 '    '   weak   '     5             1620 
+     995              ' 0.008 '    '   weak   '     5             1620 
+    1021              ' 0.008 '    '   weak   '     5             1620 
+    1047              ' 0.008 '    '   weak   '     5             1620 
+    1073              ' 0.008 '    '   weak   '     5             1620 
+    1099              ' 0.008 '    '   weak   '     5             1620 
+    1125              ' 0.008 '    '   weak   '     5             1620 
+    1151              ' 0.008 '    '   weak   '     5             1620 
+    1177              ' 0.008 '    '   weak   '     5             1620 
+    1203              ' 0.008 '    '   weak   '     5             1620 
+    1229              ' 0.008 '    '   weak   '     5             1620 
+    1255              ' 0.008 '    '   weak   '     5             1620 
+    1281              ' 0.008 '    '   weak   '     5             1620 
+    1307              ' 0.006 '    '   weak   '     5             1620 
+      38              ' 0.004 '    '   weak   '     5             1620 
+      69              ' 0.004 '    '   weak   '     5             1620 
+      95              ' 0.004 '    '   weak   '     5             1620 
+     121              ' 0.004 '    '   weak   '     5             1620 
+     147              ' 0.004 '    '   weak   '     5             1620 
+     173              ' 0.004 '    '   weak   '     5             1620 
+     199              ' 0.004 '    '   weak   '     5             1620 
+     225              ' 0.004 '    '   weak   '     5             1620 
+     251              ' 0.004 '    '   weak   '     5             1620 
+     277              ' 0.004 '    '   weak   '     5             1620 
+     303              ' 0.004 '    '   weak   '     5             1620 
+     329              ' 0.004 '    '   weak   '     5             1620 
+     355              ' 0.004 '    '   weak   '     5             1620 
+     381              ' 0.004 '    '   weak   '     5             1620 
+     407              ' 0.004 '    '   weak   '     5             1620 
+     433              ' 0.004 '    '   weak   '     5             1620 
+     459              ' 0.004 '    '   weak   '     5             1620 
+     485              ' 0.004 '    '   weak   '     5             1620 
+     511              ' 0.004 '    '   weak   '     5             1620 
+     537              ' 0.004 '    '   weak   '     5             1620 
+     563              ' 0.004 '    '   weak   '     5             1620 
+     589              ' 0.004 '    '   weak   '     5             1620 
+     615              ' 0.004 '    '   weak   '     5             1620 
+     641              ' 0.004 '    '   weak   '     5             1620 
+     667              ' 0.004 '    '   weak   '     5             1620 
+     693              ' 0.004 '    '   weak   '     5             1620 
+     719              ' 0.004 '    '   weak   '     5             1620 
+     745              ' 0.004 '    '   weak   '     5             1620 
+     771              ' 0.004 '    '   weak   '     5             1620 
+     797              ' 0.004 '    '   weak   '     5             1620 
+     823              ' 0.004 '    '   weak   '     5             1620 
+     849              ' 0.004 '    '   weak   '     5             1620 
+     875              ' 0.004 '    '   weak   '     5             1620 
+     901              ' 0.004 '    '   weak   '     5             1620 
+     927              ' 0.004 '    '   weak   '     5             1620 
+     953              ' 0.004 '    '   weak   '     5             1620 
+     979              ' 0.004 '    '   weak   '     5             1620 
+    1005              ' 0.004 '    '   weak   '     5             1620 
+    1031              ' 0.004 '    '   weak   '     5             1620 
+    1057              ' 0.004 '    '   weak   '     5             1620 
+    1083              ' 0.004 '    '   weak   '     5             1620 
+    1109              ' 0.004 '    '   weak   '     5             1620 
+    1135              ' 0.004 '    '   weak   '     5             1620 
+    1161              ' 0.004 '    '   weak   '     5             1620 
+    1187              ' 0.004 '    '   weak   '     5             1620 
+    1213              ' 0.004 '    '   weak   '     5             1620 
+    1239              ' 0.004 '    '   weak   '     5             1620 
+    1265              ' 0.004 '    '   weak   '     5             1620 
+      30              ' 0.002 '    '   weak   '    10             1620 
+      33              ' 0.002 '    '   weak   '     8             1620 
+      37              ' 0.002 '    '   weak   '     6             1620 
+      41              ' 0.002 '    '   weak   '     3             1620 
+      45              ' 0.002 '    '   weak   '     7             1620 
+      48              ' 0.002 '    '   weak   '     6             1620 
+      49              ' 0.002 '    '   weak   '     6             1620 
+      51              ' 0.002 '    '   weak   '     4             1620 
+      52              ' 0.002 '    '   weak   '     4             1620 
+      61              ' 0.002 '    '   weak   '    10             1620 
+      64              ' 0.002 '    '   weak   '     8             1620 
+      68              ' 0.002 '    '   weak   '     6             1620 
+      72              ' 0.002 '    '   weak   '     3             1620 
+      73              ' 0.002 '    '   weak   '     7             1620 
+      75              ' 0.002 '    '   weak   '     6             1620 
+      76              ' 0.002 '    '   weak   '     6             1620 
+      78              ' 0.002 '    '   weak   '     4             1620 
+      79              ' 0.002 '    '   weak   '     4             1620 
+      87              ' 0.002 '    '   weak   '    10             1620 
+      90              ' 0.002 '    '   weak   '     8             1620 
+      94              ' 0.002 '    '   weak   '     6             1620 
+      98              ' 0.002 '    '   weak   '     3             1620 
+      99              ' 0.002 '    '   weak   '     7             1620 
+     101              ' 0.002 '    '   weak   '     6             1620 
+     102              ' 0.002 '    '   weak   '     6             1620 
+     104              ' 0.002 '    '   weak   '     4             1620 
+     105              ' 0.002 '    '   weak   '     4             1620 
+     113              ' 0.002 '    '   weak   '    10             1620 
+     116              ' 0.002 '    '   weak   '     8             1620 
+     120              ' 0.002 '    '   weak   '     6             1620 
+     124              ' 0.002 '    '   weak   '     3             1620 
+     125              ' 0.002 '    '   weak   '     7             1620 
+     127              ' 0.002 '    '   weak   '     6             1620 
+     128              ' 0.002 '    '   weak   '     6             1620 
+     130              ' 0.002 '    '   weak   '     4             1620 
+     131              ' 0.002 '    '   weak   '     4             1620 
+     139              ' 0.002 '    '   weak   '    10             1620 
+     142              ' 0.002 '    '   weak   '     8             1620 
+     146              ' 0.002 '    '   weak   '     6             1620 
+     150              ' 0.002 '    '   weak   '     3             1620 
+     151              ' 0.002 '    '   weak   '     7             1620 
+     153              ' 0.002 '    '   weak   '     6             1620 
+     154              ' 0.002 '    '   weak   '     6             1620 
+     156              ' 0.002 '    '   weak   '     4             1620 
+     157              ' 0.002 '    '   weak   '     4             1620 
+     165              ' 0.002 '    '   weak   '    10             1620 
+     168              ' 0.002 '    '   weak   '     8             1620 
+     172              ' 0.002 '    '   weak   '     6             1620 
+     176              ' 0.002 '    '   weak   '     3             1620 
+     177              ' 0.002 '    '   weak   '     7             1620 
+     179              ' 0.002 '    '   weak   '     6             1620 
+     180              ' 0.002 '    '   weak   '     6             1620 
+     182              ' 0.002 '    '   weak   '     4             1620 
+     183              ' 0.002 '    '   weak   '     4             1620 
+     191              ' 0.002 '    '   weak   '    10             1620 
+     194              ' 0.002 '    '   weak   '     8             1620 
+     198              ' 0.002 '    '   weak   '     6             1620 
+     202              ' 0.002 '    '   weak   '     3             1620 
+     203              ' 0.002 '    '   weak   '     7             1620 
+     205              ' 0.002 '    '   weak   '     6             1620 
+     206              ' 0.002 '    '   weak   '     6             1620 
+     208              ' 0.002 '    '   weak   '     4             1620 
+     209              ' 0.002 '    '   weak   '     4             1620 
+     217              ' 0.002 '    '   weak   '    10             1620 
+     220              ' 0.002 '    '   weak   '     8             1620 
+     224              ' 0.002 '    '   weak   '     6             1620 
+     228              ' 0.002 '    '   weak   '     3             1620 
+     229              ' 0.002 '    '   weak   '     7             1620 
+     231              ' 0.002 '    '   weak   '     6             1620 
+     232              ' 0.002 '    '   weak   '     6             1620 
+     234              ' 0.002 '    '   weak   '     4             1620 
+     235              ' 0.002 '    '   weak   '     4             1620 
+     243              ' 0.002 '    '   weak   '    10             1620 
+     246              ' 0.002 '    '   weak   '     8             1620 
+     250              ' 0.002 '    '   weak   '     6             1620 
+     254              ' 0.002 '    '   weak   '     3             1620 
+     255              ' 0.002 '    '   weak   '     7             1620 
+     257              ' 0.002 '    '   weak   '     6             1620 
+     258              ' 0.002 '    '   weak   '     6             1620 
+     260              ' 0.002 '    '   weak   '     4             1620 
+     261              ' 0.002 '    '   weak   '     4             1620 
+     269              ' 0.002 '    '   weak   '    10             1620 
+     272              ' 0.002 '    '   weak   '     8             1620 
+     276              ' 0.002 '    '   weak   '     6             1620 
+     280              ' 0.002 '    '   weak   '     3             1620 
+     281              ' 0.002 '    '   weak   '     7             1620 
+     283              ' 0.002 '    '   weak   '     6             1620 
+     284              ' 0.002 '    '   weak   '     6             1620 
+     286              ' 0.002 '    '   weak   '     4             1620 
+     287              ' 0.002 '    '   weak   '     4             1620 
+     295              ' 0.002 '    '   weak   '    10             1620 
+     298              ' 0.002 '    '   weak   '     8             1620 
+     302              ' 0.002 '    '   weak   '     6             1620 
+     306              ' 0.002 '    '   weak   '     3             1620 
+     307              ' 0.002 '    '   weak   '     7             1620 
+     309              ' 0.002 '    '   weak   '     6             1620 
+     310              ' 0.002 '    '   weak   '     6             1620 
+     312              ' 0.002 '    '   weak   '     4             1620 
+     313              ' 0.002 '    '   weak   '     4             1620 
+     321              ' 0.002 '    '   weak   '    10             1620 
+     324              ' 0.002 '    '   weak   '     8             1620 
+     328              ' 0.002 '    '   weak   '     6             1620 
+     332              ' 0.002 '    '   weak   '     3             1620 
+     333              ' 0.002 '    '   weak   '     7             1620 
+     335              ' 0.002 '    '   weak   '     6             1620 
+     336              ' 0.002 '    '   weak   '     6             1620 
+     338              ' 0.002 '    '   weak   '     4             1620 
+     339              ' 0.002 '    '   weak   '     4             1620 
+     347              ' 0.002 '    '   weak   '    10             1620 
+     350              ' 0.002 '    '   weak   '     8             1620 
+     354              ' 0.002 '    '   weak   '     6             1620 
+     358              ' 0.002 '    '   weak   '     3             1620 
+     359              ' 0.002 '    '   weak   '     7             1620 
+     361              ' 0.002 '    '   weak   '     6             1620 
+     362              ' 0.002 '    '   weak   '     6             1620 
+     364              ' 0.002 '    '   weak   '     4             1620 
+     365              ' 0.002 '    '   weak   '     4             1620 
+     373              ' 0.002 '    '   weak   '    10             1620 
+     376              ' 0.002 '    '   weak   '     8             1620 
+     380              ' 0.002 '    '   weak   '     6             1620 
+     384              ' 0.002 '    '   weak   '     3             1620 
+     385              ' 0.002 '    '   weak   '     7             1620 
+     387              ' 0.002 '    '   weak   '     6             1620 
+     388              ' 0.002 '    '   weak   '     6             1620 
+     390              ' 0.002 '    '   weak   '     4             1620 
+     391              ' 0.002 '    '   weak   '     4             1620 
+     399              ' 0.002 '    '   weak   '    10             1620 
+     402              ' 0.002 '    '   weak   '     8             1620 
+     406              ' 0.002 '    '   weak   '     6             1620 
+     410              ' 0.002 '    '   weak   '     3             1620 
+     411              ' 0.002 '    '   weak   '     7             1620 
+     413              ' 0.002 '    '   weak   '     6             1620 
+     414              ' 0.002 '    '   weak   '     6             1620 
+     416              ' 0.002 '    '   weak   '     4             1620 
+     417              ' 0.002 '    '   weak   '     4             1620 
+     425              ' 0.002 '    '   weak   '    10             1620 
+     428              ' 0.002 '    '   weak   '     8             1620 
+     432              ' 0.002 '    '   weak   '     6             1620 
+     436              ' 0.002 '    '   weak   '     3             1620 
+     437              ' 0.002 '    '   weak   '     7             1620 
+     439              ' 0.002 '    '   weak   '     6             1620 
+     440              ' 0.002 '    '   weak   '     6             1620 
+     442              ' 0.002 '    '   weak   '     4             1620 
+     443              ' 0.002 '    '   weak   '     4             1620 
+     451              ' 0.002 '    '   weak   '    10             1620 
+     454              ' 0.002 '    '   weak   '     8             1620 
+     458              ' 0.002 '    '   weak   '     6             1620 
+     462              ' 0.002 '    '   weak   '     3             1620 
+     463              ' 0.002 '    '   weak   '     7             1620 
+     465              ' 0.002 '    '   weak   '     6             1620 
+     466              ' 0.002 '    '   weak   '     6             1620 
+     468              ' 0.002 '    '   weak   '     4             1620 
+     469              ' 0.002 '    '   weak   '     4             1620 
+     477              ' 0.002 '    '   weak   '    10             1620 
+     480              ' 0.002 '    '   weak   '     8             1620 
+     484              ' 0.002 '    '   weak   '     6             1620 
+     488              ' 0.002 '    '   weak   '     3             1620 
+     489              ' 0.002 '    '   weak   '     7             1620 
+     491              ' 0.002 '    '   weak   '     6             1620 
+     492              ' 0.002 '    '   weak   '     6             1620 
+     494              ' 0.002 '    '   weak   '     4             1620 
+     495              ' 0.002 '    '   weak   '     4             1620 
+     503              ' 0.002 '    '   weak   '    10             1620 
+     506              ' 0.002 '    '   weak   '     8             1620 
+     510              ' 0.002 '    '   weak   '     6             1620 
+     514              ' 0.002 '    '   weak   '     3             1620 
+     515              ' 0.002 '    '   weak   '     7             1620 
+     517              ' 0.002 '    '   weak   '     6             1620 
+     518              ' 0.002 '    '   weak   '     6             1620 
+     520              ' 0.002 '    '   weak   '     4             1620 
+     521              ' 0.002 '    '   weak   '     4             1620 
+     529              ' 0.002 '    '   weak   '    10             1620 
+     532              ' 0.002 '    '   weak   '     8             1620 
+     536              ' 0.002 '    '   weak   '     6             1620 
+     540              ' 0.002 '    '   weak   '     3             1620 
+     541              ' 0.002 '    '   weak   '     7             1620 
+     543              ' 0.002 '    '   weak   '     6             1620 
+     544              ' 0.002 '    '   weak   '     6             1620 
+     546              ' 0.002 '    '   weak   '     4             1620 
+     547              ' 0.002 '    '   weak   '     4             1620 
+     555              ' 0.002 '    '   weak   '    10             1620 
+     558              ' 0.002 '    '   weak   '     8             1620 
+     562              ' 0.002 '    '   weak   '     6             1620 
+     566              ' 0.002 '    '   weak   '     3             1620 
+     567              ' 0.002 '    '   weak   '     7             1620 
+     569              ' 0.002 '    '   weak   '     6             1620 
+     570              ' 0.002 '    '   weak   '     6             1620 
+     572              ' 0.002 '    '   weak   '     4             1620 
+     573              ' 0.002 '    '   weak   '     4             1620 
+     581              ' 0.002 '    '   weak   '    10             1620 
+     584              ' 0.002 '    '   weak   '     8             1620 
+     588              ' 0.002 '    '   weak   '     6             1620 
+     592              ' 0.002 '    '   weak   '     3             1620 
+     593              ' 0.002 '    '   weak   '     7             1620 
+     595              ' 0.002 '    '   weak   '     6             1620 
+     596              ' 0.002 '    '   weak   '     6             1620 
+     598              ' 0.002 '    '   weak   '     4             1620 
+     599              ' 0.002 '    '   weak   '     4             1620 
+     607              ' 0.002 '    '   weak   '    10             1620 
+     610              ' 0.002 '    '   weak   '     8             1620 
+     614              ' 0.002 '    '   weak   '     6             1620 
+     618              ' 0.002 '    '   weak   '     3             1620 
+     619              ' 0.002 '    '   weak   '     7             1620 
+     621              ' 0.002 '    '   weak   '     6             1620 
+     622              ' 0.002 '    '   weak   '     6             1620 
+     624              ' 0.002 '    '   weak   '     4             1620 
+     625              ' 0.002 '    '   weak   '     4             1620 
+     633              ' 0.002 '    '   weak   '    10             1620 
+     636              ' 0.002 '    '   weak   '     8             1620 
+     640              ' 0.002 '    '   weak   '     6             1620 
+     644              ' 0.002 '    '   weak   '     3             1620 
+     645              ' 0.002 '    '   weak   '     7             1620 
+     647              ' 0.002 '    '   weak   '     6             1620 
+     648              ' 0.002 '    '   weak   '     6             1620 
+     650              ' 0.002 '    '   weak   '     4             1620 
+     651              ' 0.002 '    '   weak   '     4             1620 
+     659              ' 0.002 '    '   weak   '    10             1620 
+     662              ' 0.002 '    '   weak   '     8             1620 
+     666              ' 0.002 '    '   weak   '     6             1620 
+     670              ' 0.002 '    '   weak   '     3             1620 
+     671              ' 0.002 '    '   weak   '     7             1620 
+     673              ' 0.002 '    '   weak   '     6             1620 
+     674              ' 0.002 '    '   weak   '     6             1620 
+     676              ' 0.002 '    '   weak   '     4             1620 
+     677              ' 0.002 '    '   weak   '     4             1620 
+     685              ' 0.002 '    '   weak   '    10             1620 
+     688              ' 0.002 '    '   weak   '     8             1620 
+     692              ' 0.002 '    '   weak   '     6             1620 
+     696              ' 0.002 '    '   weak   '     3             1620 
+     697              ' 0.002 '    '   weak   '     7             1620 
+     699              ' 0.002 '    '   weak   '     6             1620 
+     700              ' 0.002 '    '   weak   '     6             1620 
+     702              ' 0.002 '    '   weak   '     4             1620 
+     703              ' 0.002 '    '   weak   '     4             1620 
+     711              ' 0.002 '    '   weak   '    10             1620 
+     714              ' 0.002 '    '   weak   '     8             1620 
+     718              ' 0.002 '    '   weak   '     6             1620 
+     722              ' 0.002 '    '   weak   '     3             1620 
+     723              ' 0.002 '    '   weak   '     7             1620 
+     725              ' 0.002 '    '   weak   '     6             1620 
+     726              ' 0.002 '    '   weak   '     6             1620 
+     728              ' 0.002 '    '   weak   '     4             1620 
+     729              ' 0.002 '    '   weak   '     4             1620 
+     737              ' 0.002 '    '   weak   '    10             1620 
+     740              ' 0.002 '    '   weak   '     8             1620 
+     744              ' 0.002 '    '   weak   '     6             1620 
+     748              ' 0.002 '    '   weak   '     3             1620 
+     749              ' 0.002 '    '   weak   '     7             1620 
+     751              ' 0.002 '    '   weak   '     6             1620 
+     752              ' 0.002 '    '   weak   '     6             1620 
+     754              ' 0.002 '    '   weak   '     4             1620 
+     755              ' 0.002 '    '   weak   '     4             1620 
+     763              ' 0.002 '    '   weak   '    10             1620 
+     766              ' 0.002 '    '   weak   '     8             1620 
+     770              ' 0.002 '    '   weak   '     6             1620 
+     774              ' 0.002 '    '   weak   '     3             1620 
+     775              ' 0.002 '    '   weak   '     7             1620 
+     777              ' 0.002 '    '   weak   '     6             1620 
+     778              ' 0.002 '    '   weak   '     6             1620 
+     780              ' 0.002 '    '   weak   '     4             1620 
+     781              ' 0.002 '    '   weak   '     4             1620 
+     789              ' 0.002 '    '   weak   '    10             1620 
+     792              ' 0.002 '    '   weak   '     8             1620 
+     796              ' 0.002 '    '   weak   '     6             1620 
+     800              ' 0.002 '    '   weak   '     3             1620 
+     801              ' 0.002 '    '   weak   '     7             1620 
+     803              ' 0.002 '    '   weak   '     6             1620 
+     804              ' 0.002 '    '   weak   '     6             1620 
+     806              ' 0.002 '    '   weak   '     4             1620 
+     807              ' 0.002 '    '   weak   '     4             1620 
+     815              ' 0.002 '    '   weak   '    10             1620 
+     818              ' 0.002 '    '   weak   '     8             1620 
+     822              ' 0.002 '    '   weak   '     6             1620 
+     826              ' 0.002 '    '   weak   '     3             1620 
+     827              ' 0.002 '    '   weak   '     7             1620 
+     829              ' 0.002 '    '   weak   '     6             1620 
+     830              ' 0.002 '    '   weak   '     6             1620 
+     832              ' 0.002 '    '   weak   '     4             1620 
+     833              ' 0.002 '    '   weak   '     4             1620 
+     841              ' 0.002 '    '   weak   '    10             1620 
+     844              ' 0.002 '    '   weak   '     8             1620 
+     848              ' 0.002 '    '   weak   '     6             1620 
+     852              ' 0.002 '    '   weak   '     3             1620 
+     853              ' 0.002 '    '   weak   '     7             1620 
+     855              ' 0.002 '    '   weak   '     6             1620 
+     856              ' 0.002 '    '   weak   '     6             1620 
+     858              ' 0.002 '    '   weak   '     4             1620 
+     859              ' 0.002 '    '   weak   '     4             1620 
+     867              ' 0.002 '    '   weak   '    10             1620 
+     870              ' 0.002 '    '   weak   '     8             1620 
+     874              ' 0.002 '    '   weak   '     6             1620 
+     878              ' 0.002 '    '   weak   '     3             1620 
+     879              ' 0.002 '    '   weak   '     7             1620 
+     881              ' 0.002 '    '   weak   '     6             1620 
+     882              ' 0.002 '    '   weak   '     6             1620 
+     884              ' 0.002 '    '   weak   '     4             1620 
+     885              ' 0.002 '    '   weak   '     4             1620 
+     893              ' 0.002 '    '   weak   '    10             1620 
+     896              ' 0.002 '    '   weak   '     8             1620 
+     900              ' 0.002 '    '   weak   '     6             1620 
+     904              ' 0.002 '    '   weak   '     3             1620 
+     905              ' 0.002 '    '   weak   '     7             1620 
+     907              ' 0.002 '    '   weak   '     6             1620 
+     908              ' 0.002 '    '   weak   '     6             1620 
+     910              ' 0.002 '    '   weak   '     4             1620 
+     911              ' 0.002 '    '   weak   '     4             1620 
+     919              ' 0.002 '    '   weak   '    10             1620 
+     922              ' 0.002 '    '   weak   '     8             1620 
+     926              ' 0.002 '    '   weak   '     6             1620 
+     930              ' 0.002 '    '   weak   '     3             1620 
+     931              ' 0.002 '    '   weak   '     7             1620 
+     933              ' 0.002 '    '   weak   '     6             1620 
+     934              ' 0.002 '    '   weak   '     6             1620 
+     936              ' 0.002 '    '   weak   '     4             1620 
+     937              ' 0.002 '    '   weak   '     4             1620 
+     945              ' 0.002 '    '   weak   '    10             1620 
+     948              ' 0.002 '    '   weak   '     8             1620 
+     952              ' 0.002 '    '   weak   '     6             1620 
+     956              ' 0.002 '    '   weak   '     3             1620 
+     957              ' 0.002 '    '   weak   '     7             1620 
+     959              ' 0.002 '    '   weak   '     6             1620 
+     960              ' 0.002 '    '   weak   '     6             1620 
+     962              ' 0.002 '    '   weak   '     4             1620 
+     963              ' 0.002 '    '   weak   '     4             1620 
+     971              ' 0.002 '    '   weak   '    10             1620 
+     974              ' 0.002 '    '   weak   '     8             1620 
+     978              ' 0.002 '    '   weak   '     6             1620 
+     982              ' 0.002 '    '   weak   '     3             1620 
+     983              ' 0.002 '    '   weak   '     7             1620 
+     985              ' 0.002 '    '   weak   '     6             1620 
+     986              ' 0.002 '    '   weak   '     6             1620 
+     988              ' 0.002 '    '   weak   '     4             1620 
+     989              ' 0.002 '    '   weak   '     4             1620 
+     997              ' 0.002 '    '   weak   '    10             1620 
+    1000              ' 0.002 '    '   weak   '     8             1620 
+    1004              ' 0.002 '    '   weak   '     6             1620 
+    1008              ' 0.002 '    '   weak   '     3             1620 
+    1009              ' 0.002 '    '   weak   '     7             1620 
+    1011              ' 0.002 '    '   weak   '     6             1620 
+    1012              ' 0.002 '    '   weak   '     6             1620 
+    1014              ' 0.002 '    '   weak   '     4             1620 
+    1015              ' 0.002 '    '   weak   '     4             1620 
+    1023              ' 0.002 '    '   weak   '    10             1620 
+    1026              ' 0.002 '    '   weak   '     8             1620 
+    1030              ' 0.002 '    '   weak   '     6             1620 
+    1034              ' 0.002 '    '   weak   '     3             1620 
+    1035              ' 0.002 '    '   weak   '     7             1620 
+    1037              ' 0.002 '    '   weak   '     6             1620 
+    1038              ' 0.002 '    '   weak   '     6             1620 
+    1040              ' 0.002 '    '   weak   '     4             1620 
+    1041              ' 0.002 '    '   weak   '     4             1620 
+    1049              ' 0.002 '    '   weak   '    10             1620 
+    1052              ' 0.002 '    '   weak   '     8             1620 
+    1056              ' 0.002 '    '   weak   '     6             1620 
+    1060              ' 0.002 '    '   weak   '     3             1620 
+    1061              ' 0.002 '    '   weak   '     7             1620 
+    1063              ' 0.002 '    '   weak   '     6             1620 
+    1064              ' 0.002 '    '   weak   '     6             1620 
+    1066              ' 0.002 '    '   weak   '     4             1620 
+    1067              ' 0.002 '    '   weak   '     4             1620 
+    1075              ' 0.002 '    '   weak   '    10             1620 
+    1078              ' 0.002 '    '   weak   '     8             1620 
+    1082              ' 0.002 '    '   weak   '     6             1620 
+    1086              ' 0.002 '    '   weak   '     3             1620 
+    1087              ' 0.002 '    '   weak   '     7             1620 
+    1089              ' 0.002 '    '   weak   '     6             1620 
+    1090              ' 0.002 '    '   weak   '     6             1620 
+    1092              ' 0.002 '    '   weak   '     4             1620 
+    1101              ' 0.002 '    '   weak   '    10             1620 
+    1104              ' 0.002 '    '   weak   '     8             1620 
+    1108              ' 0.002 '    '   weak   '     6             1620 
+    1112              ' 0.002 '    '   weak   '     3             1620 
+    1113              ' 0.002 '    '   weak   '     7             1620 
+    1115              ' 0.002 '    '   weak   '     6             1620 
+    1116              ' 0.002 '    '   weak   '     6             1620 
+    1118              ' 0.002 '    '   weak   '     4             1620 
+    1127              ' 0.002 '    '   weak   '    10             1620 
+    1130              ' 0.002 '    '   weak   '     8             1620 
+    1134              ' 0.002 '    '   weak   '     6             1620 
+    1138              ' 0.002 '    '   weak   '     3             1620 
+    1139              ' 0.002 '    '   weak   '     7             1620 
+    1141              ' 0.002 '    '   weak   '     6             1620 
+    1142              ' 0.002 '    '   weak   '     6             1620 
+    1144              ' 0.002 '    '   weak   '     4             1620 
+    1153              ' 0.002 '    '   weak   '    10             1620 
+    1156              ' 0.002 '    '   weak   '     8             1620 
+    1160              ' 0.002 '    '   weak   '     6             1620 
+    1164              ' 0.002 '    '   weak   '     3             1620 
+    1165              ' 0.002 '    '   weak   '     7             1620 
+    1167              ' 0.002 '    '   weak   '     6             1620 
+    1168              ' 0.002 '    '   weak   '     6             1620 
+    1170              ' 0.002 '    '   weak   '     4             1620 
+    1179              ' 0.002 '    '   weak   '    10             1620 
+    1182              ' 0.002 '    '   weak   '     8             1620 
+    1186              ' 0.002 '    '   weak   '     6             1620 
+    1190              ' 0.002 '    '   weak   '     3             1620 
+    1191              ' 0.002 '    '   weak   '     7             1620 
+    1193              ' 0.002 '    '   weak   '     6             1620 
+    1194              ' 0.002 '    '   weak   '     6             1620 
+    1196              ' 0.002 '    '   weak   '     4             1620 
+    1205              ' 0.002 '    '   weak   '    10             1620 
+    1208              ' 0.002 '    '   weak   '     8             1620 
+    1212              ' 0.002 '    '   weak   '     6             1620 
+    1216              ' 0.002 '    '   weak   '     3             1620 
+    1217              ' 0.002 '    '   weak   '     7             1620 
+    1219              ' 0.002 '    '   weak   '     6             1620 
+    1220              ' 0.002 '    '   weak   '     6             1620 
+    1222              ' 0.002 '    '   weak   '     4             1620 
+    1231              ' 0.002 '    '   weak   '    10             1620 
+    1234              ' 0.002 '    '   weak   '     8             1620 
+    1238              ' 0.002 '    '   weak   '     6             1620 
+    1242              ' 0.002 '    '   weak   '     3             1620 
+    1243              ' 0.002 '    '   weak   '     7             1620 
+    1245              ' 0.002 '    '   weak   '     6             1620 
+    1246              ' 0.002 '    '   weak   '     6             1620 
+    1248              ' 0.002 '    '   weak   '     4             1620 
+    1257              ' 0.002 '    '   weak   '    10             1620 
+    1260              ' 0.002 '    '   weak   '     8             1620 
+    1264              ' 0.002 '    '   weak   '     6             1620 
+    1268              ' 0.002 '    '   weak   '     3             1620 
+    1269              ' 0.002 '    '   weak   '     7             1620 
+    1271              ' 0.002 '    '   weak   '     6             1620 
+    1272              ' 0.002 '    '   weak   '     6             1620 
+    1274              ' 0.002 '    '   weak   '     4             1620 
+    1283              ' 0.002 '    '   weak   '    10             1620 
+    1286              ' 0.002 '    '   weak   '     8             1620 
+    1290              ' 0.002 '    '   weak   '     6             1620 
+    1291              ' 0.002 '    '   weak   '     5             1620 
+    1294              ' 0.002 '    '   weak   '     3             1620 
+    1295              ' 0.002 '    '   weak   '     7             1620 
+    1297              ' 0.002 '    '   weak   '     6             1620 
+    1298              ' 0.002 '    '   weak   '     6             1620 
+    1300              ' 0.002 '    '   weak   '     4             1620 
+    1309              ' 0.002 '    '   weak   '    10             1620 
+    1312              ' 0.002 '    '   weak   '     8             1620 
+    1316              ' 0.002 '    '   weak   '     6             1620 
+    1317              ' 0.002 '    '   weak   '     5             1620 
+    1320              ' 0.002 '    '   weak   '     3             1620 
+    1321              ' 0.002 '    '   weak   '     7             1620 
+    1323              ' 0.002 '    '   weak   '     6             1620 
+    1324              ' 0.002 '    '   weak   '     6             1620 
+    1326              ' 0.002 '    '   weak   '     4             1620 
+
+Figure 67. ROC for Stability of Strong Features AUC=0.981. Sample Size: 500, RFE.
+__________________________________________________________________________________
+
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% MltNet. Sample Size: 500. RFE.
+unit_stability_type(500, 2, "MltNet")
+
+##### SOURCE END #####
+--></body></html>
