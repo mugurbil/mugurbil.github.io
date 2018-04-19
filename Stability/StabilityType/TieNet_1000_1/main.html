@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>TieNet. Sample Size: 1000. HPC.</title><meta name="generator" content="MATLAB 9.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-05"><meta name="DC.source" content="main.m"><style type="text/css">
+      --><title>TieNet. Sample Size: 1000. HPC.</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-12"><meta name="DC.source" content="main.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -77,58 +77,58 @@ TOTAL COUNTS:    Strong=23, Weak=26, Irrelevant=4
     Feature_Number    Stability        Type        Path_Length    N_MBS    Equivalence
     ______________    _________    ____________    ___________    _____    ___________
 
-    23                ' 0.612 '    '  STRONG  '      3               0     21         
-    20                ' 0.260 '    '  STRONG  '      3               0     18         
-    22                ' 0.226 '    '  STRONG  '      2               0     21         
-    21                ' 0.162 '    '  STRONG  '      1               0     21         
-    19                ' 0.134 '    '  STRONG  '      2               0     18         
-    18                ' 0.086 '    '  STRONG  '      1               0     18         
-     6                ' 0.072 '    '  STRONG  '      3               0      1         
-    11                ' 0.056 '    '  STRONG  '      4               0      7         
-    40                ' 0.052 '    '   weak   '      3               0     40         
-    10                ' 0.050 '    '  STRONG  '      4               0      7         
-    39                ' 0.050 '    '   weak   '      4               0     39         
-    27                ' 0.048 '    '   weak   '      6               0     27         
-    17                ' 0.042 '    '  STRONG  '      4              18     12         
-     5                ' 0.034 '    '  STRONG  '      3              36      1         
-    33                ' 0.030 '    '   weak   '      8              36     33         
-    36                ' 0.030 '    '   weak   '      8              36     36         
-     8                ' 0.028 '    '  STRONG  '      2              54      7         
-     4                ' 0.026 '    '  STRONG  '      4              81      1         
-    16                ' 0.026 '    '  STRONG  '      2             162     12         
-    25                ' 0.026 '    '   weak   '      6             162     25         
-    24                ' 0.024 '    '   weak   '      4             162     24         
-    44                ' 0.024 '    'irrelevant'    Inf             162     44         
-     3                ' 0.022 '    '  STRONG  '      4             216      1         
-    14                ' 0.020 '    '  STRONG  '      3             324     12         
-    28                ' 0.020 '    '   weak   '      5             324     28         
-    34                ' 0.020 '    '   weak   '      8             324     34         
-    38                ' 0.020 '    '   weak   '      5             324     38         
-    52                ' 0.020 '    '   weak   '      4             324     52         
-    15                ' 0.018 '    '  STRONG  '      3             432     12         
-     2                ' 0.016 '    '  STRONG  '      2             540      1         
-    12                ' 0.016 '    '  STRONG  '      1             675     12         
-    43                ' 0.016 '    'irrelevant'    Inf             675     43         
-    45                ' 0.014 '    '   weak   '      7             675     45         
-     9                ' 0.012 '    '  STRONG  '      3             900      7         
-    51                ' 0.012 '    '   weak   '      4             900     51         
-    53                ' 0.010 '    '   weak   '      5             900     53         
-     7                ' 0.008 '    '  STRONG  '      1            1125      7         
-    26                ' 0.006 '    '   weak   '      5            1125     26         
-    30                ' 0.004 '    '   weak   '     10            1125     30         
-    46                ' 0.004 '    '   weak   '      7            1125     46         
-    49                ' 0.004 '    '   weak   '      6            1125     49         
-    13                ' 0.002 '    '  STRONG  '      2            1350     12         
-    29                ' 0.002 '    '   weak   '     11            1350     29         
-    32                ' 0.002 '    '   weak   '      8            1350     32         
-    35                ' 0.002 '    '   weak   '      7            1350     35         
-    37                ' 0.002 '    '   weak   '      6            1350     37         
-    50                ' 0.002 '    '   weak   '      5            1350     50         
+          23          ' 0.612 '    '  STRONG  '          3           0         21     
+          20          ' 0.260 '    '  STRONG  '          3           0         18     
+          22          ' 0.226 '    '  STRONG  '          2           0         21     
+          21          ' 0.162 '    '  STRONG  '          1           0         21     
+          19          ' 0.134 '    '  STRONG  '          2           0         18     
+          18          ' 0.086 '    '  STRONG  '          1           0         18     
+           6          ' 0.072 '    '  STRONG  '          3           0          1     
+          11          ' 0.056 '    '  STRONG  '          4           0          7     
+          40          ' 0.052 '    '   weak   '          3           0         40     
+          10          ' 0.050 '    '  STRONG  '          4           0          7     
+          39          ' 0.050 '    '   weak   '          4           0         39     
+          27          ' 0.048 '    '   weak   '          6           0         27     
+          17          ' 0.042 '    '  STRONG  '          4          18         12     
+           5          ' 0.034 '    '  STRONG  '          3          36          1     
+          33          ' 0.030 '    '   weak   '          8          36         33     
+          36          ' 0.030 '    '   weak   '          8          36         36     
+           8          ' 0.028 '    '  STRONG  '          2          54          7     
+           4          ' 0.026 '    '  STRONG  '          4          81          1     
+          16          ' 0.026 '    '  STRONG  '          2         162         12     
+          25          ' 0.026 '    '   weak   '          6         162         25     
+          24          ' 0.024 '    '   weak   '          4         162         24     
+          44          ' 0.024 '    'irrelevant'        Inf         162         44     
+           3          ' 0.022 '    '  STRONG  '          4         216          1     
+          14          ' 0.020 '    '  STRONG  '          3         324         12     
+          28          ' 0.020 '    '   weak   '          5         324         28     
+          34          ' 0.020 '    '   weak   '          8         324         34     
+          38          ' 0.020 '    '   weak   '          5         324         38     
+          52          ' 0.020 '    '   weak   '          4         324         52     
+          15          ' 0.018 '    '  STRONG  '          3         432         12     
+           2          ' 0.016 '    '  STRONG  '          2         540          1     
+          12          ' 0.016 '    '  STRONG  '          1         675         12     
+          43          ' 0.016 '    'irrelevant'        Inf         675         43     
+          45          ' 0.014 '    '   weak   '          7         675         45     
+           9          ' 0.012 '    '  STRONG  '          3         900          7     
+          51          ' 0.012 '    '   weak   '          4         900         51     
+          53          ' 0.010 '    '   weak   '          5         900         53     
+           7          ' 0.008 '    '  STRONG  '          1        1125          7     
+          26          ' 0.006 '    '   weak   '          5        1125         26     
+          30          ' 0.004 '    '   weak   '         10        1125         30     
+          46          ' 0.004 '    '   weak   '          7        1125         46     
+          49          ' 0.004 '    '   weak   '          6        1125         49     
+          13          ' 0.002 '    '  STRONG  '          2        1350         12     
+          29          ' 0.002 '    '   weak   '         11        1350         29     
+          32          ' 0.002 '    '   weak   '          8        1350         32     
+          35          ' 0.002 '    '   weak   '          7        1350         35     
+          37          ' 0.002 '    '   weak   '          6        1350         37     
+          50          ' 0.002 '    '   weak   '          5        1350         50     
 
 Figure 8. ROC for Stability of Strong Features AUC=0.761. Sample Size: 1000, HPC.
 __________________________________________________________________________________
 
-</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017b</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% TieNet. Sample Size: 1000. HPC.
 unit_stability_type(1000, 1, "TieNet")
