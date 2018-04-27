@@ -1,0 +1,339 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Feature Stability of LARS_EN on ErrNet with 2000 samples.</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-27"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Feature Stability of LARS_EN on ErrNet with 2000 samples.</h1><pre class="codeinput">unit_stability_type(2000, 3, <span class="string">"ErrNet"</span>)
+</pre><pre class="codeoutput">Table 141. Feature Stability of LARS EN on ErrNet with 2000 samples.
+_____________________________________________________________________
+
+SELECTED COUNTS: Strong=23, Weak=226, Irrelevant=0
+TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
+
+
+    Feature_Number    Stability        Type        Path_Length    N_MBS    Equivalence
+    ______________    _________    ____________    ___________    _____    ___________
+
+           18         ' 1.000 '    '  STRONG  '         1            0         18     
+           19         ' 1.000 '    '  STRONG  '         2            0         18     
+           20         ' 1.000 '    '  STRONG  '         3            0         18     
+           21         ' 1.000 '    '  STRONG  '         1            0         21     
+           22         ' 1.000 '    '  STRONG  '         2            0         21     
+           23         ' 1.000 '    '  STRONG  '         3            0         21     
+            1         ' 0.832 '    '  STRONG  '         1            0          1     
+            2         ' 0.832 '    '  STRONG  '         2            0          1     
+            3         ' 0.832 '    '  STRONG  '         4            0          1     
+            4         ' 0.832 '    '  STRONG  '         4            0          1     
+            5         ' 0.832 '    '  STRONG  '         3            0          1     
+            6         ' 0.832 '    '  STRONG  '         3            0          1     
+            7         ' 0.648 '    '  STRONG  '         1            0          7     
+            8         ' 0.648 '    '  STRONG  '         2            0          7     
+            9         ' 0.648 '    '  STRONG  '         3            0          7     
+           10         ' 0.648 '    '  STRONG  '         4            0          7     
+           11         ' 0.648 '    '  STRONG  '         4            0          7     
+           12         ' 0.518 '    '  STRONG  '         1          270         12     
+           13         ' 0.518 '    '  STRONG  '         2          540         12     
+           14         ' 0.518 '    '  STRONG  '         3          810         12     
+           15         ' 0.518 '    '  STRONG  '         3         1080         12     
+           16         ' 0.518 '    '  STRONG  '         2         1350         12     
+           17         ' 0.518 '    '  STRONG  '         4         1620         12     
+          642         ' 0.162 '    '   weak   '         4         1620         39     
+         1162         ' 0.152 '    '   weak   '         4         1620         39     
+          694         ' 0.146 '    '   weak   '         4         1620         39     
+          709         ' 0.136 '    '   weak   '         5         1620         28     
+          278         ' 0.134 '    '   weak   '         4         1620         39     
+          423         ' 0.132 '    '   weak   '         5         1620         28     
+         1047         ' 0.132 '    '   weak   '         5         1620         28     
+          787         ' 0.128 '    '   weak   '         5         1620         28     
+          345         ' 0.124 '    '   weak   '         5         1620         28     
+         1255         ' 0.120 '    '   weak   '         5         1620         28     
+          616         ' 0.112 '    '   weak   '         4         1620         39     
+          319         ' 0.108 '    '   weak   '         5         1620         28     
+          553         ' 0.106 '    '   weak   '         5         1620         28     
+          579         ' 0.104 '    '   weak   '         5         1620         28     
+         1214         ' 0.104 '    '   weak   '         4         1620         39     
+         1293         ' 0.098 '    '   weak   '         3         1620         40     
+         1033         ' 0.096 '    '   weak   '         3         1620         40     
+          460         ' 0.094 '    '   weak   '         4         1620         39     
+          564         ' 0.090 '    '   weak   '         4         1620         39     
+         1032         ' 0.090 '    '   weak   '         4         1620         39     
+          111         ' 0.088 '    '   weak   '         5         1620         28     
+          434         ' 0.088 '    '   weak   '         4         1620         39     
+          539         ' 0.088 '    '   weak   '         3         1620         40     
+          267         ' 0.086 '    '   weak   '         5         1620         28     
+          538         ' 0.086 '    '   weak   '         4         1620         39     
+          122         ' 0.084 '    '   weak   '         4         1620         39     
+          293         ' 0.084 '    '   weak   '         5         1620         28     
+          735         ' 0.084 '    '   weak   '         5         1620         28     
+          850         ' 0.084 '    '   weak   '         4         1620         39     
+         1163         ' 0.084 '    '   weak   '         3         1620         40     
+          163         ' 0.082 '    '   weak   '         5         1620         28     
+          657         ' 0.082 '    '   weak   '         5         1620         28     
+          371         ' 0.080 '    '   weak   '         5         1620         28     
+          746         ' 0.080 '    '   weak   '         4         1620         39     
+          995         ' 0.080 '    '   weak   '         5         1620         28     
+         1111         ' 0.080 '    '   weak   '         3         1620         40     
+         1189         ' 0.078 '    '   weak   '         3         1620         40     
+           97         ' 0.076 '    '   weak   '         3         1620         40     
+          486         ' 0.076 '    '   weak   '         4         1620         39     
+         1084         ' 0.076 '    '   weak   '         4         1620         39     
+         1058         ' 0.074 '    '   weak   '         4         1620         39     
+         1241         ' 0.074 '    '   weak   '         3         1620         40     
+          123         ' 0.072 '    '   weak   '         3         1620         40     
+          917         ' 0.072 '    '   weak   '         5         1620         28     
+         1021         ' 0.072 '    '   weak   '         5         1620         28     
+         1267         ' 0.072 '    '   weak   '         3         1620         40     
+          772         ' 0.070 '    '   weak   '         4         1620         39     
+          876         ' 0.068 '    '   weak   '         4         1620         39     
+          943         ' 0.066 '    '   weak   '         5         1620         28     
+           70         ' 0.064 '    '   weak   '         4         1620         39     
+          137         ' 0.064 '    '   weak   '         5         1620         28     
+          969         ' 0.062 '    '   weak   '         5         1620         28     
+          980         ' 0.062 '    '   weak   '         4         1620         39     
+         1240         ' 0.062 '    '   weak   '         4         1620         39     
+          409         ' 0.060 '    '   weak   '         3         1620         40     
+          903         ' 0.060 '    '   weak   '         3         1620         40     
+          449         ' 0.058 '    '   weak   '         5         1620         28     
+          891         ' 0.058 '    '   weak   '         5         1620         28     
+          461         ' 0.056 '    '   weak   '         3         1620         40     
+          631         ' 0.056 '    '   weak   '         5         1620         28     
+         1307         ' 0.056 '    '   weak   '         5         1620         28     
+           69         ' 0.052 '    '   weak   '         5         1620         38     
+          617         ' 0.052 '    '   weak   '         3         1620         40     
+          695         ' 0.052 '    '   weak   '         3         1620         40     
+           71         ' 0.050 '    '   weak   '         3         1620         40     
+          148         ' 0.050 '    '   weak   '         4         1620         39     
+          527         ' 0.050 '    '   weak   '         5         1620         28     
+          615         ' 0.050 '    '   weak   '         5         1620         38     
+          849         ' 0.050 '    '   weak   '         5         1620         38     
+         1059         ' 0.050 '    '   weak   '         3         1620         40     
+          226         ' 0.048 '    '   weak   '         4         1620         39     
+          227         ' 0.046 '    '   weak   '         3         1620         40     
+          241         ' 0.046 '    '   weak   '         5         1620         28     
+          279         ' 0.046 '    '   weak   '         3         1620         40     
+          435         ' 0.046 '    '   weak   '         3         1620         40     
+          459         ' 0.046 '    '   weak   '         5         1620         38     
+          929         ' 0.046 '    '   weak   '         3         1620         40     
+         1057         ' 0.046 '    '   weak   '         5         1620         38     
+          174         ' 0.044 '    '   weak   '         4         1620         39     
+          902         ' 0.044 '    '   weak   '         4         1620         39     
+          331         ' 0.042 '    '   weak   '         3         1620         40     
+          408         ' 0.040 '    '   weak   '         4         1620         39     
+          537         ' 0.040 '    '   weak   '         5         1620         38     
+         1177         ' 0.040 '    '   weak   '         5         1620         28     
+           96         ' 0.038 '    '   weak   '         4         1620         39     
+          330         ' 0.038 '    '   weak   '         4         1620         39     
+          475         ' 0.038 '    '   weak   '         5         1620         28     
+         1281         ' 0.038 '    '   weak   '         5         1620         28     
+          201         ' 0.036 '    '   weak   '         3         1620         40     
+          252         ' 0.036 '    '   weak   '         4         1620         39     
+          397         ' 0.036 '    '   weak   '         5         1620         28     
+          927         ' 0.036 '    '   weak   '         5         1620         38     
+         1188         ' 0.036 '    '   weak   '         4         1620         39     
+          761         ' 0.034 '    '   weak   '         5         1620         28     
+          928         ' 0.034 '    '   weak   '         4         1620         39     
+         1265         ' 0.034 '    '   weak   '         5         1620         38     
+         1266         ' 0.034 '    '   weak   '         4         1620         39     
+          563         ' 0.032 '    '   weak   '         5         1620         38     
+          590         ' 0.032 '    '   weak   '         4         1620         39     
+          668         ' 0.032 '    '   weak   '         4         1620         39     
+          303         ' 0.030 '    '   weak   '         5         1620         38     
+          747         ' 0.030 '    '   weak   '         3         1620         40     
+         1187         ' 0.030 '    '   weak   '         5         1620         38     
+           95         ' 0.028 '    '   weak   '         5         1620         38     
+          813         ' 0.028 '    '   weak   '         5         1620         28     
+          823         ' 0.028 '    '   weak   '         5         1620         38     
+          954         ' 0.028 '    '   weak   '         4         1620         39     
+         1006         ' 0.028 '    '   weak   '         4         1620         39     
+         1203         ' 0.028 '    '   weak   '         5         1620         28     
+          189         ' 0.026 '    '   weak   '         5         1620         28     
+          253         ' 0.026 '    '   weak   '         3         1620         40     
+          720         ' 0.026 '    '   weak   '         4         1620         39     
+         1110         ' 0.026 '    '   weak   '         4         1620         39     
+         1292         ' 0.026 '    '   weak   '         4         1620         39     
+          356         ' 0.024 '    '   weak   '         4         1620         39     
+          357         ' 0.024 '    '   weak   '         3         1620         40     
+          381         ' 0.024 '    '   weak   '         5         1620         38     
+          277         ' 0.022 '    '   weak   '         5         1620         38     
+          721         ' 0.020 '    '   weak   '         3         1620         40     
+          839         ' 0.020 '    '   weak   '         5         1620         28     
+          953         ' 0.020 '    '   weak   '         5         1620         38     
+         1083         ' 0.020 '    '   weak   '         5         1620         38     
+          146         ' 0.018 '    '   weak   '         6         1620         37     
+          147         ' 0.018 '    '   weak   '         5         1620         38     
+          225         ' 0.018 '    '   weak   '         5         1620         38     
+          825         ' 0.018 '    '   weak   '         3         1620         40     
+          901         ' 0.018 '    '   weak   '         5         1620         38     
+          981         ' 0.018 '    '   weak   '         3         1620         40     
+         1291         ' 0.018 '    '   weak   '         5         1620         38     
+         1317         ' 0.018 '    '   weak   '         5         1620         38     
+         1318         ' 0.018 '    '   weak   '         4         1620         39     
+          487         ' 0.016 '    '   weak   '         3         1620         40     
+          734         ' 0.016 '    '   weak   '         6         1620         27     
+           68         ' 0.014 '    '   weak   '         6         1620         37     
+          175         ' 0.014 '    '   weak   '         3         1620         40     
+          194         ' 0.014 '    '   weak   '         8         1620         33     
+          501         ' 0.014 '    '   weak   '         5         1620         28     
+          512         ' 0.014 '    '   weak   '         4         1620         39     
+          605         ' 0.014 '    '   weak   '         5         1620         28     
+          745         ' 0.014 '    '   weak   '         5         1620         38     
+          276         ' 0.012 '    '   weak   '         6         1620         37     
+          304         ' 0.012 '    '   weak   '         4         1620         39     
+          683         ' 0.012 '    '   weak   '         5         1620         28     
+          744         ' 0.012 '    '   weak   '         6         1620         37     
+          771         ' 0.012 '    '   weak   '         5         1620         38     
+          824         ' 0.012 '    '   weak   '         4         1620         39     
+          851         ' 0.012 '    '   weak   '         3         1620         40     
+          875         ' 0.012 '    '   weak   '         5         1620         38     
+          955         ' 0.012 '    '   weak   '         3         1620         40     
+         1005         ' 0.012 '    '   weak   '         5         1620         38     
+         1234         ' 0.012 '    '   weak   '         8         1620         33     
+          113         ' 0.010 '    '   weak   '        10         1620         30     
+          329         ' 0.010 '    '   weak   '         5         1620         38     
+          407         ' 0.010 '    '   weak   '         5         1620         38     
+          650         ' 0.010 '    '   weak   '         4         1620         51     
+         1135         ' 0.010 '    '   weak   '         5         1620         38     
+         1161         ' 0.010 '    '   weak   '         5         1620         38     
+          305         ' 0.008 '    '   weak   '         3         1620         40     
+          641         ' 0.008 '    '   weak   '         5         1620         38     
+         1125         ' 0.008 '    '   weak   '         5         1620         28     
+         1238         ' 0.008 '    '   weak   '         6         1620         37     
+         1284         ' 0.008 '    '   weak   '         9         1620         31     
+          104         ' 0.006 '    '   weak   '         4         1620         51     
+          149         ' 0.006 '    '   weak   '         3         1620         40     
+          200         ' 0.006 '    '   weak   '         4         1620         39     
+          355         ' 0.006 '    '   weak   '         5         1620         38     
+          382         ' 0.006 '    '   weak   '         4         1620         39     
+          536         ' 0.006 '    '   weak   '         6         1620         37     
+          562         ' 0.006 '    '   weak   '         6         1620         37     
+          591         ' 0.006 '    '   weak   '         3         1620         40     
+          610         ' 0.006 '    '   weak   '         8         1620         33     
+          643         ' 0.006 '    '   weak   '         3         1620         40     
+          693         ' 0.006 '    '   weak   '         5         1620         38     
+          806         ' 0.006 '    '   weak   '         4         1620         51     
+          947         ' 0.006 '    '   weak   '         8         1620         32     
+         1007         ' 0.006 '    '   weak   '         3         1620         40     
+         1073         ' 0.006 '    '   weak   '         5         1620         28     
+         1239         ' 0.006 '    '   weak   '         5         1620         38     
+           78         ' 0.004 '    '   weak   '         4         1620         51     
+          224         ' 0.004 '    '   weak   '         6         1620         37     
+          426         ' 0.004 '    '   weak   '         9         1620         31     
+          485         ' 0.004 '    '   weak   '         5         1620         38     
+          667         ' 0.004 '    '   weak   '         5         1620         38     
+          719         ' 0.004 '    '   weak   '         5         1620         38     
+          797         ' 0.004 '    '   weak   '         5         1620         38     
+          812         ' 0.004 '    '   weak   '         6         1620         27     
+          865         ' 0.004 '    '   weak   '         5         1620         28     
+         1031         ' 0.004 '    '   weak   '         5         1620         38     
+         1137         ' 0.004 '    '   weak   '         3         1620         40     
+         1196         ' 0.004 '    '   weak   '         4         1620         51     
+         1215         ' 0.004 '    '   weak   '         3         1620         40     
+         1229         ' 0.004 '    '   weak   '         5         1620         28     
+         1248         ' 0.004 '    '   weak   '         4         1620         51     
+         1254         ' 0.004 '    '   weak   '         6         1620         27     
+           55         ' 0.002 '    '   weak   '         4         1620         24     
+           59         ' 0.002 '    '   weak   '         5         1620         28     
+           85         ' 0.002 '    '   weak   '         5         1620         28     
+          128         ' 0.002 '    '   weak   '         6         1620         49     
+          198         ' 0.002 '    '   weak   '         6         1620         37     
+          286         ' 0.002 '    '   weak   '         4         1620         51     
+          298         ' 0.002 '    '   weak   '         8         1620         33     
+          350         ' 0.002 '    '   weak   '         8         1620         33     
+          364         ' 0.002 '    '   weak   '         4         1620         51     
+          432         ' 0.002 '    '   weak   '         6         1620         37     
+          511         ' 0.002 '    '   weak   '         5         1620         38     
+          584         ' 0.002 '    '   weak   '         8         1620         33     
+          588         ' 0.002 '    '   weak   '         6         1620         37     
+          614         ' 0.002 '    '   weak   '         6         1620         37     
+          780         ' 0.002 '    '   weak   '         4         1620         51     
+          798         ' 0.002 '    '   weak   '         4         1620         39     
+          804         ' 0.002 '    '   weak   '         6         1620         49     
+          822         ' 0.002 '    '   weak   '         6         1620         37     
+          848         ' 0.002 '    '   weak   '         6         1620         37     
+          962         ' 0.002 '    '   weak   '         4         1620         51     
+          979         ' 0.002 '    '   weak   '         5         1620         38     
+         1004         ' 0.002 '    '   weak   '         6         1620         37     
+         1030         ' 0.002 '    '   weak   '         6         1620         37     
+         1049         ' 0.002 '    '   weak   '        10         1620         30     
+         1108         ' 0.002 '    '   weak   '         6         1620         37     
+         1134         ' 0.002 '    '   weak   '         6         1620         37     
+         1136         ' 0.002 '    '   weak   '         4         1620         39     
+         1144         ' 0.002 '    '   weak   '         4         1620         51     
+         1160         ' 0.002 '    '   weak   '         6         1620         37     
+         1186         ' 0.002 '    '   weak   '         6         1620         37     
+         1290         ' 0.002 '    '   weak   '         6         1620         37     
+         1311         ' 0.002 '    '   weak   '         8         1620         32     
+
+Figure 141. ROC for Stability of Strong Features AUC=1.000. Sample Size: 2000, LARS EN.
+________________________________________________________________________________________
+
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Feature Stability of LARS_EN on ErrNet with 2000 samples.
+unit_stability_type(2000, 3, "ErrNet")
+
+##### SOURCE END #####
+--></body></html>

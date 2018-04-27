@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Stability and Performance</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-23"><meta name="DC.source" content="web_stability_perf.m"><style type="text/css">
+      --><title>Stability and Performance on TieNet</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-27"><meta name="DC.source" content="web_stability_perf.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,14 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Stability and Performance</h1><!--introduction--><p>Mehmet Ugurbil</p><p>Unversity of Minnesota</p><p>23-Apr-2018</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Experiment Design</a></li><li><a href="#2">Performance</a></li><li><a href="#3">The End</a></li></ul></div><h2 id="1">Experiment Design</h2><p>
+  </style></head><body><div class="content"><h1>Stability and Performance on TieNet</h1><!--introduction--><p>Mehmet Ugurbil</p><p>Unversity of Minnesota</p><p>27-Apr-2018</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Aim</a></li><li><a href="#2">Null Hypothesis</a></li><li><a href="#3">Experiment Design</a></li><li><a href="#4">Observations</a></li><li><a href="#5">Dataset Descriptions</a></li><li><a href="#6">Performance</a></li><li><a href="#7">The End</a></li></ul></div><h2 id="1">Aim</h2><p>
+1. Show that stability of feature selector is not correlated with the performance of the selected features.<br/>
+- - In other words, different sets of features can have equal signal strength.<br/>
+2. Instability can exist even when no information equivalency is present in the dataset.<br/>
+3. The claims hold for datasets with multiplicity, withot multiplicity, removed according to true graph or using Tie* results, and with large number of weak variables with and without added error.<br/>
+</p><h2 id="2">Null Hypothesis</h2><p>
+Instable feature selection leads to poor performance.<br/>
+</p><h2 id="3">Experiment Design</h2><p>
 1. Feature selection and svm classification on cross validation sets of small sample.<br/>
 - - Assesment of performance on 50 repeat, 10 fold cross validation.<br/>
 - - Calculation of stability metrics.<br/>
@@ -74,34 +81,87 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 - - Model validation performance assesed on hold out testing set.<br/>
 3. SVM classification using features selected in (2) on large sample training set.<br/>
 - - Feature validation performance assesed on hold out testing set.<br/>
-</p><h2 id="2">Performance</h2><p>
-<body>
+</p><h2 id="4">Observations</h2><p>
+1. Monotonic performance increase is observed as sample size increases.<br/>
+2. Performance of the models approach the theoretical limit in the large sample limit.<br/>
+3. Instable features selected in small sample region generalize well.<br/>
+4. Stability in RFE increases initially, sees a minima for medium sample size, then continues increasing.<br/>
+</p><h2 id="5">Dataset Descriptions</h2><p>
 TieNet = Original simulated data - <a href="http://www.jmlr.org/papers/volume16/statnikov15a/statnikov15a.pdf">TIE near-faithful causal network</a>.<br/>
 RedNet = TieNet with multiplicity removed according to the original graph.<br/>
 StrNet = TieNet with multiplicity removed using Tie* Algorithm.<br/>
 - - Note that this is not one dataset, but one for each repeat per sample size (550 total).<br/>
 - - This also implies that the feature stability doesn't make sense in this dataset, but included for completeness.<br/>
+StrNetComp = StrNet that used complete method to calculate correlation coefficient in the fisher algortihm.<br/>
+StrNetPair = StrNet that used pairwise method to calculate correlation coefficient in the fisher algortihm.<br/>
 MltNet = TieNet with weak variables multiplied 50 times.<br/>
 ErrNet = MltNet with gaussian noise, uniformly random deviation.
+</p><h2 id="6">Performance</h2><p>
+<body>
 <div style="width: 100%; overflow: hidden;">
 <div style="margin-left: 20px;">
 <form name="change">
-<select name="options_1" onChange="document.getElementById('iframe_1').src = this.options[this.selectedIndex].value">
-<option value=""> Choose </option>
-<option value="Performance/Summary_TieNet/main.html"> TieNet </option>
-<option value="Performance/Summary_RedNet/main.html"> RedNet </option>
-<option value="Performance/Summary_StrNet/main.html"> StrNet </option>
-<option value="Performance/Summary_MltNet/main.html"> MltNet </option>
-<option value="Performance/Summary_ErrNet/main.html"> ErrNet </option>
+Frame 1:
+<select name="options" id="options1" onChange="changeFunction('iframe1', 'options1', 'options2')">
+<option value=""> Dataset </option>
+<option value="Performance/Summary_TieNet_"> TieNet </option>
+<option value="Performance/Summary_RedNet_"> RedNet </option>
+<option value="Performance/Summary_StrNetPair_"> StrNetPair </option>
+<option value="Performance/Summary_StrNetComp_"> StrNetComp </option>
+<option value="Performance/Summary_MltNet_"> MltNet </option>
+<option value="Performance/Summary_ErrNet_"> ErrNet </option>
+</select>
+<select name="options" id="options2" onChange="changeFunction('iframe1', 'options1', 'options2')">
+<option value=""> FS Method </option>
+<option value="HPC_K_3/main.html"> HPC K 3 </option>
+<option value="RFE_LINEAR/main.html"> RFE LINEAR </option>
+<option value="LARS_EN/main.html"> LARS EN </option>
+</select>
+<span style="display:inline-block; width: 745;"></span>
+Frame 2:
+<select name="options" id="options3" onChange="changeFunction('iframe2', 'options3', 'options4')">
+<option value=""> Dataset </option>
+<option value="Performance/Summary_TieNet_"> TieNet </option>
+<option value="Performance/Summary_RedNet_"> RedNet </option>
+<option value="Performance/Summary_StrNetPair_"> StrNetPair </option>
+<option value="Performance/Summary_StrNetComp_"> StrNetComp </option>
+<option value="Performance/Summary_MltNet_"> MltNet </option>
+<option value="Performance/Summary_ErrNet_"> ErrNet </option>
+</select>
+<select name="options" id="options4" onChange="changeFunction('iframe2', 'options3', 'options4')">
+<option value=""> FS Method </option>
+<option value="HPC_K_3/main.html"> HPC K 3 </option>
+<option value="RFE_LINEAR/main.html"> RFE LINEAR </option>
+<option value="LARS_EN/main.html"> LARS EN </option>
 </select>
 </form>
 </div>
 <div id="Perf">
-<iframe name="iframe" id="iframe_1" src="" width = 1500 height = 3000></iframe>
+<iframe name="iframe" id="iframe1" src="" width = 1000 height = 1500></iframe>
+<iframe name="iframe" id="iframe2" src="" width = 1000 height = 1500></iframe>
 </div>
 </body>
-</p><h2 id="3">The End</h2><p>
+</p><h2 id="7">The End</h2><p>
 <script>
+function changeFunction(f,x,y,z) {
+   var f = document.getElementById(f)
+   var x = document.getElementById(x)
+   var x = x.options[x.selectedIndex].value
+   if ( y == undefined ) {
+       var y = ""
+   } else {
+       var y = document.getElementById(y)
+       var y = y.options[y.selectedIndex].value
+   }
+   if ( z == undefined ) {
+       var z = ""
+   } else {
+       var z = document.getElementById(z)
+       var z = z.options[z.selectedIndex].value
+   }
+   var w = x.concat(y,z)
+   f.src = w
+}
  function myFunction(x) {
      var x = document.getElementById(x);
      if (x.style.display === "none") {
@@ -120,14 +180,27 @@ $(document).ready(function(){
 </script>
 </p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% Stability and Performance
+%% Stability and Performance on TieNet
 %
 % Mehmet Ugurbil
 %
 % Unversity of Minnesota
 %
-% 23-Apr-2018
+% 27-Apr-2018
 %
+%% Aim
+%
+% <html>
+% 1. Show that stability of feature selector is not correlated with the performance of the selected features.<br/>
+% - - In other words, different sets of features can have equal signal strength.<br/>
+% 2. Instability can exist even when no information equivalency is present in the dataset.<br/>
+% 3. The claims hold for datasets with multiplicity, withot multiplicity, removed according to true graph or using Tie* results, and with large number of weak variables with and without added error.<br/>
+% </html>
+%% Null Hypothesis
+%
+% <html>
+% Instable feature selection leads to poor performance.<br/>
+% </html>
 %% Experiment Design
 %
 % <html>
@@ -139,32 +212,72 @@ $(document).ready(function(){
 % 3. SVM classification using features selected in (2) on large sample training set.<br/>
 % - - Feature validation performance assesed on hold out testing set.<br/>
 % </html>
-%% Performance
+%% Observations
 %
 % <html>
-% <body>
+% 1. Monotonic performance increase is observed as sample size increases.<br/>
+% 2. Performance of the models approach the theoretical limit in the large sample limit.<br/>
+% 3. Instable features selected in small sample region generalize well.<br/>
+% 4. Stability in RFE increases initially, sees a minima for medium sample size, then continues increasing.<br/>
+% </html>
+%% Dataset Descriptions
+%
+% <html>
 % TieNet = Original simulated data - <a href="http://www.jmlr.org/papers/volume16/statnikov15a/statnikov15a.pdf">TIE near-faithful causal network</a>.<br/>
 % RedNet = TieNet with multiplicity removed according to the original graph.<br/>
 % StrNet = TieNet with multiplicity removed using Tie* Algorithm.<br/>
 % - - Note that this is not one dataset, but one for each repeat per sample size (550 total).<br/>
 % - - This also implies that the feature stability doesn't make sense in this dataset, but included for completeness.<br/>
+% StrNetComp = StrNet that used complete method to calculate correlation coefficient in the fisher algortihm.<br/>
+% StrNetPair = StrNet that used pairwise method to calculate correlation coefficient in the fisher algortihm.<br/>
 % MltNet = TieNet with weak variables multiplied 50 times.<br/>
 % ErrNet = MltNet with gaussian noise, uniformly random deviation.
+% </html>
+%% Performance
+%
+% <html>
+% <body>
 % <div style="width: 100%; overflow: hidden;">
 % <div style="margin-left: 20px;"> 
 % <form name="change">
-% <select name="options_1" onChange="document.getElementById('iframe_1').src = this.options[this.selectedIndex].value">
-% <option value=""> Choose </option>
-% <option value="Performance/Summary_TieNet/main.html"> TieNet </option>
-% <option value="Performance/Summary_RedNet/main.html"> RedNet </option>
-% <option value="Performance/Summary_StrNet/main.html"> StrNet </option>
-% <option value="Performance/Summary_MltNet/main.html"> MltNet </option>
-% <option value="Performance/Summary_ErrNet/main.html"> ErrNet </option>
+% Frame 1:
+% <select name="options" id="options1" onChange="changeFunction('iframe1', 'options1', 'options2')">
+% <option value=""> Dataset </option>
+% <option value="Performance/Summary_TieNet_"> TieNet </option>
+% <option value="Performance/Summary_RedNet_"> RedNet </option>
+% <option value="Performance/Summary_StrNetPair_"> StrNetPair </option>
+% <option value="Performance/Summary_StrNetComp_"> StrNetComp </option>
+% <option value="Performance/Summary_MltNet_"> MltNet </option>
+% <option value="Performance/Summary_ErrNet_"> ErrNet </option>
+% </select>
+% <select name="options" id="options2" onChange="changeFunction('iframe1', 'options1', 'options2')">
+% <option value=""> FS Method </option>
+% <option value="HPC_K_3/main.html"> HPC K 3 </option>
+% <option value="RFE_LINEAR/main.html"> RFE LINEAR </option>
+% <option value="LARS_EN/main.html"> LARS EN </option>
+% </select>
+% <span style="display:inline-block; width: 745;"></span>
+% Frame 2:
+% <select name="options" id="options3" onChange="changeFunction('iframe2', 'options3', 'options4')">
+% <option value=""> Dataset </option>
+% <option value="Performance/Summary_TieNet_"> TieNet </option>
+% <option value="Performance/Summary_RedNet_"> RedNet </option>
+% <option value="Performance/Summary_StrNetPair_"> StrNetPair </option>
+% <option value="Performance/Summary_StrNetComp_"> StrNetComp </option>
+% <option value="Performance/Summary_MltNet_"> MltNet </option>
+% <option value="Performance/Summary_ErrNet_"> ErrNet </option>
+% </select>
+% <select name="options" id="options4" onChange="changeFunction('iframe2', 'options3', 'options4')">
+% <option value=""> FS Method </option>
+% <option value="HPC_K_3/main.html"> HPC K 3 </option>
+% <option value="RFE_LINEAR/main.html"> RFE LINEAR </option>
+% <option value="LARS_EN/main.html"> LARS EN </option>
 % </select>
 % </form>
 % </div>
 % <div id="Perf">
-% <iframe name="iframe" id="iframe_1" src="" width = 1500 height = 3000></iframe>
+% <iframe name="iframe" id="iframe1" src="" width = 1000 height = 1500></iframe>
+% <iframe name="iframe" id="iframe2" src="" width = 1000 height = 1500></iframe>
 % </div>
 % </body>
 % </html>
@@ -173,6 +286,25 @@ $(document).ready(function(){
 %
 % <html>
 % <script>
+% function changeFunction(f,x,y,z) {
+%    var f = document.getElementById(f)
+%    var x = document.getElementById(x)
+%    var x = x.options[x.selectedIndex].value
+%    if ( y == undefined ) {
+%        var y = ""
+%    } else {
+%        var y = document.getElementById(y)
+%        var y = y.options[y.selectedIndex].value
+%    }
+%    if ( z == undefined ) {
+%        var z = ""
+%    } else {
+%        var z = document.getElementById(z)
+%        var z = z.options[z.selectedIndex].value
+%    }
+%    var w = x.concat(y,z)
+%    f.src = w
+% }
 %  function myFunction(x) {
 %      var x = document.getElementById(x);
 %      if (x.style.display === "none") {
