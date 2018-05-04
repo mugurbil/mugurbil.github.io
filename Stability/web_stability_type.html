@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Feature Stability</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-27"><meta name="DC.source" content="web_stability_type.m"><style type="text/css">
+      --><title>Feature Stability</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-04"><meta name="DC.source" content="web_stability_type.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,16 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Feature Stability</h1><!--introduction--><p>Mehmet Ugurbil</p><p>Unversity of Minnesota</p><p>27-Apr-2018</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Aim</a></li><li><a href="#2">Null Hypothesis</a></li><li><a href="#3">Experiment Design</a></li><li><a href="#4">Observations</a></li><li><a href="#5">Dataset Descriptions</a></li><li><a href="#6">Breakdown of Stability</a></li><li><a href="#7">The End</a></li></ul></div><h2 id="1">Aim</h2><p>
+  </style></head><body><div class="content"><h1>Feature Stability</h1><!--introduction--><p>Mehmet Ugurbil</p><p>Unversity of Minnesota</p><p>04-May-2018</p><p><a href="mugurbil.github.io">Back to Home Page</a></p><p>
+<head>
+<style>
+iframe {
+float: left;
+width: 50%;
+}
+</style>
+</head>
+</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Aim</a></li><li><a href="#2">Null Hypothesis</a></li><li><a href="#3">Experiment Design</a></li><li><a href="#4">Observations</a></li><li><a href="#5">Dataset Descriptions</a></li><li><a href="#6">Breakdown of Stability</a></li><li><a href="#7">The End</a></li></ul></div><h2 id="1">Aim</h2><p>
 1. Find out when a feature selector finds at least one Markov blancket.<br/>
 2. See how stable strong features are compared to other types of features.<br/>
 3. Compare various feature selectors on various types of datasets.<br/>
@@ -96,20 +105,20 @@ ErrNet = MltNet with gaussian noise, uniformly random deviation.
 <form name="change">
 Frame 1:
 <select name="options" id="options1" onChange="changeFunction('iframe1', 'options1', 'options2', 'options3')">
-<option value=""> Dataset </option>
+<option value="empty"> Dataset </option>
 <option value="StabilityType/TieNet_"> TieNet </option>
 <option value="StabilityType/RedNet_"> RedNet </option>
 <option value="StabilityType/MltNet_"> MltNet </option>
 <option value="StabilityType/ErrNet_"> ErrNet </option>
 </select>
 <select name="options" id="options2" onChange="changeFunction('iframe1', 'options1', 'options2', 'options3')">
-<option value=""> FS Method </option>
+<option value="empty"> FS Method </option>
 <option value="HPC_K_3_"> HPC K 3 </option>
 <option value="RFE_LINEAR_"> RFE LINEAR </option>
 <option value="LARS_EN_"> LARS EN </option>
 </select>
 <select name="options" id="options3" onChange="changeFunction('iframe1', 'options1', 'options2', 'options3')">
-<option value="Summary/main.html"> Sample Size </option>
+<option value="Summary/main.html"> Summary (Sample Size) </option>
 <option value="50/main.html"> 50 </option>
 <option value="100/main.html"> 100 </option>
 <option value="200/main.html"> 200 </option>
@@ -122,23 +131,23 @@ Frame 1:
 <option value="10000/main.html"> 10000 </option>
 <option value="100000/main.html"> 100000 </option>
 </select>
-<span style="display:inline-block; width: 745;"></span>
+<span style="display:inline-block; width: 100;"></span>
 Frame 2:
 <select name="options" id="options4" onChange="changeFunction('iframe2', 'options4', 'options5', 'options6')">
-<option value=""> Dataset </option>
+<option value="empty"> Dataset </option>
 <option value="StabilityType/TieNet_"> TieNet </option>
 <option value="StabilityType/RedNet_"> RedNet </option>
 <option value="StabilityType/MltNet_"> MltNet </option>
 <option value="StabilityType/ErrNet_"> ErrNet </option>
 </select>
 <select name="options" id="options5" onChange="changeFunction('iframe2', 'options4', 'options5', 'options6')">
-<option value=""> FS Method </option>
+<option value="empty"> FS Method </option>
 <option value="HPC_K_3_"> HPC K 3 </option>
 <option value="RFE_LINEAR_"> RFE LINEAR </option>
 <option value="LARS_EN_"> LARS EN </option>
 </select>
 <select name="options" id="options6" onChange="changeFunction('iframe2', 'options4', 'options5', 'options6')">
-<option value="Summary/main.html"> Sample Size </option>
+<option value="Summary/main.html"> Summary (Sample Size) </option>
 <option value="50/main.html"> 50 </option>
 <option value="100/main.html"> 100 </option>
 <option value="200/main.html"> 200 </option>
@@ -155,8 +164,8 @@ Frame 2:
 </div>
 </div>
 <div id="StabilityType">
-<iframe name="iframe" id="iframe1" src="" width = 1000 height = 23000></iframe>
-<iframe name="iframe" id="iframe2" src="" width = 1000 height = 23000></iframe>
+<iframe name="iframe" id="iframe1" src="" height = 23000></iframe>
+<iframe name="iframe" id="iframe2" src="" height = 23000></iframe>
 </div>
 </body>
 </p><h2 id="7">The End</h2><p>
@@ -178,7 +187,9 @@ function changeFunction(f,x,y,z) {
        var z = z.options[z.selectedIndex].value
    }
    var w = x.concat(y,z)
-   f.src = w
+   if( x != "empty" && y != "empty" && z != "empty") {
+      f.src = w
+   }
 }
  function myFunction(x) {
      var x = document.getElementById(x);
@@ -204,8 +215,21 @@ $(document).ready(function(){
 %
 % Unversity of Minnesota
 %
-% 27-Apr-2018
+% 04-May-2018
 %
+% <mugurbil.github.io Back to Home Page>
+%
+% <html>
+% <head>
+% <style>
+% iframe {
+% float: left;
+% width: 50%;
+% }
+% </style>
+% </head>
+% </html>
+
 %% Aim
 %
 % <html>
@@ -253,20 +277,20 @@ $(document).ready(function(){
 % <form name="change">
 % Frame 1:
 % <select name="options" id="options1" onChange="changeFunction('iframe1', 'options1', 'options2', 'options3')">
-% <option value=""> Dataset </option>
+% <option value="empty"> Dataset </option>
 % <option value="StabilityType/TieNet_"> TieNet </option>
 % <option value="StabilityType/RedNet_"> RedNet </option>
 % <option value="StabilityType/MltNet_"> MltNet </option>
 % <option value="StabilityType/ErrNet_"> ErrNet </option>
 % </select>
 % <select name="options" id="options2" onChange="changeFunction('iframe1', 'options1', 'options2', 'options3')">
-% <option value=""> FS Method </option>
+% <option value="empty"> FS Method </option>
 % <option value="HPC_K_3_"> HPC K 3 </option>
 % <option value="RFE_LINEAR_"> RFE LINEAR </option>
 % <option value="LARS_EN_"> LARS EN </option>
 % </select>
 % <select name="options" id="options3" onChange="changeFunction('iframe1', 'options1', 'options2', 'options3')">
-% <option value="Summary/main.html"> Sample Size </option>
+% <option value="Summary/main.html"> Summary (Sample Size) </option>
 % <option value="50/main.html"> 50 </option>
 % <option value="100/main.html"> 100 </option>
 % <option value="200/main.html"> 200 </option>
@@ -279,23 +303,23 @@ $(document).ready(function(){
 % <option value="10000/main.html"> 10000 </option>
 % <option value="100000/main.html"> 100000 </option>
 % </select>
-% <span style="display:inline-block; width: 745;"></span>
+% <span style="display:inline-block; width: 100;"></span>
 % Frame 2:
 % <select name="options" id="options4" onChange="changeFunction('iframe2', 'options4', 'options5', 'options6')">
-% <option value=""> Dataset </option>
+% <option value="empty"> Dataset </option>
 % <option value="StabilityType/TieNet_"> TieNet </option>
 % <option value="StabilityType/RedNet_"> RedNet </option>
 % <option value="StabilityType/MltNet_"> MltNet </option>
 % <option value="StabilityType/ErrNet_"> ErrNet </option>
 % </select>
 % <select name="options" id="options5" onChange="changeFunction('iframe2', 'options4', 'options5', 'options6')">
-% <option value=""> FS Method </option>
+% <option value="empty"> FS Method </option>
 % <option value="HPC_K_3_"> HPC K 3 </option>
 % <option value="RFE_LINEAR_"> RFE LINEAR </option>
 % <option value="LARS_EN_"> LARS EN </option>
 % </select>
 % <select name="options" id="options6" onChange="changeFunction('iframe2', 'options4', 'options5', 'options6')">
-% <option value="Summary/main.html"> Sample Size </option>
+% <option value="Summary/main.html"> Summary (Sample Size) </option>
 % <option value="50/main.html"> 50 </option>
 % <option value="100/main.html"> 100 </option>
 % <option value="200/main.html"> 200 </option>
@@ -312,8 +336,8 @@ $(document).ready(function(){
 % </div>
 % </div>
 % <div id="StabilityType">
-% <iframe name="iframe" id="iframe1" src="" width = 1000 height = 23000></iframe>
-% <iframe name="iframe" id="iframe2" src="" width = 1000 height = 23000></iframe>
+% <iframe name="iframe" id="iframe1" src="" height = 23000></iframe>
+% <iframe name="iframe" id="iframe2" src="" height = 23000></iframe>
 % </div>
 % </body>
 % </html>
@@ -339,7 +363,9 @@ $(document).ready(function(){
 %        var z = z.options[z.selectedIndex].value
 %    }
 %    var w = x.concat(y,z)
-%    f.src = w
+%    if( x != "empty" && y != "empty" && z != "empty") {
+%       f.src = w
+%    }
 % }
 %  function myFunction(x) {
 %      var x = document.getElementById(x);
