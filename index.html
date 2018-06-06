@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 
+<html>
+<head>
 <style>
-
-/*
-body {
-    background-color: black;
-}
-*/
-
 h2 {
     display: block;
     font-size: 1.5em;
@@ -18,37 +13,43 @@ h2 {
     font-weight: bold;
     color: #D35400;
 }
-
 a:link, a:visited {
     background-color: white;
     color: black;
     padding: 10px 20px;
-    text-align: center; 
-/*    text-decoration: none;
-*/    display: inline-block;
+    text-align: center;
+    display: inline-block;
 }
-
 a:hover, a:active {
     color: blue;
     padding: 10px 20px;
+    font-weight: bold;
 }
-
 </style>
-
-<html>
-
+</head>
 <body>
+    <!-- <center> -->
     <h2> Stability </h2>
     <list>
+        <li><a href="http://www.jmlr.org/papers/volume16/statnikov15a/statnikov15a.pdf"> TIE-Net Paper </a></li>
+        <li><a href="Stability/TIE-Net_Graph.png"> TIE-Net Graph </a></li>
+        <li><a href="Stability/gene.png"> Gene Experiment Results </a></li>
         <li><a href="Stability/web_stability_perf.html"> Performance and Stability </a></li>
         <li><a href="Stability/web_stability_type.html"> Stability Type </a></li>
         <li><a href="Stability/web_stable_vars.html"> Stable Variable Performance </a></li>
+        <li><a href="Stability/web_svm_weights.html"> SVM Weights AUC </a></li>
         <li><a href="Stability/svm_weights.jpg"> Normalized TieNet MB SVM Weights </a></li>
     </list>
     <h2> Suicide Project </h2>
     <list>
         <li><a href="Suicide/Features/features.html"> HPC Features Report</a></li>
     </list>
+    <h2> Signal </h2>
+    <list>
+        <li><a href="Signal/test_auc_1.pdf"> Experiment 1. Flip target equally in both classes </a></li>
+        <li><a href="Signal/test_auc_2.pdf"> Experiment 2. Flip target randomly from any class </a></li>
+        <li><a href="Signal/web_mnist.html"> MNIST 4 vs. 9 </a></li>
+    </list>
+    <!-- </center> -->
 </body>
-
 </html>

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Performance on RedNet with RFE LINEAR.</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-27"><meta name="DC.source" content="main.m"><style type="text/css">
+      --><title>Performance on TIE-Net-Reduced1 with SVM-RFE.</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-05"><meta name="DC.source" content="main.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,24 +66,24 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Performance on RedNet with RFE LINEAR.</h1><pre class="codeinput">summary_perf(<span class="string">'RedNet'</span>, 2)
-</pre><pre class="codeoutput">Figure 5. RedNet RFE LINEAR Results.
-_____________________________________
+  </style></head><body><div class="content"><h1>Performance on TIE-Net-Reduced1 with SVM-RFE.</h1><pre class="codeinput">summary_perf(<span class="string">'RedNet'</span>, 2)
+</pre><pre class="codeoutput">Figure 5. SVM-RFE results on TIE-Net-Reduced1.
+_______________________________________________
 
-</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <pre class="codeoutput">Table 5. RedNet RFE LINEAR Results.
-____________________________________
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <pre class="codeoutput">Table 5. SVM-RFE results on TIE-Net-Reduced1.
+______________________________________________
 
     Sample_Size    p_Converge     p_Next      Cross_Validation_AUC    Model_Validation_AUC    Feature_Validation_AUC
     ___________    __________    _________    ____________________    ____________________    ______________________
 
-    '      50 '    ' 0.000 '     ' 0.398 '    ' 0.730 +/- 0.016 '     ' 0.726 +/- 0.012 '      ' 0.728 +/- 0.012 '  
-    '     100 '    ' 0.000 '     ' 0.323 '    ' 0.753 +/- 0.010 '     ' 0.761 +/- 0.006 '      ' 0.761 +/- 0.006 '  
-    '     200 '    ' 0.010 '     ' 0.437 '    ' 0.785 +/- 0.006 '     ' 0.779 +/- 0.002 '      ' 0.780 +/- 0.002 '  
+    '      50 '    ' 0.000 '     ' 0.383 '    ' 0.734 +/- 0.016 '     ' 0.736 +/- 0.011 '      ' 0.737 +/- 0.011 '  
+    '     100 '    ' 0.000 '     ' 0.323 '    ' 0.755 +/- 0.010 '     ' 0.763 +/- 0.005 '      ' 0.764 +/- 0.006 '  
+    '     200 '    ' 0.010 '     ' 0.438 '    ' 0.785 +/- 0.006 '     ' 0.779 +/- 0.002 '      ' 0.780 +/- 0.002 '  
     '     300 '    ' 0.000 '     ' 0.392 '    ' 0.778 +/- 0.004 '     ' 0.784 +/- 0.001 '      ' 0.784 +/- 0.001 '  
     '     400 '    ' 0.000 '     ' 0.420 '    ' 0.783 +/- 0.004 '     ' 0.783 +/- 0.001 '      ' 0.784 +/- 0.001 '  
     '     500 '    ' 0.000 '     ' 0.382 '    ' 0.782 +/- 0.003 '     ' 0.784 +/- 0.001 '      ' 0.785 +/- 0.001 '  
     '    1000 '    ' 0.017 '     ' 0.390 '    ' 0.786 +/- 0.002 '     ' 0.787 +/- 0.001 '      ' 0.787 +/- 0.001 '  
-    '    2000 '    ' 0.020 '     ' 0.368 '    ' 0.787 +/- 0.002 '     ' 0.789 +/- 0.000 '      ' 0.791 +/- 0.001 '  
+    '    2000 '    ' 0.020 '     ' 0.368 '    ' 0.787 +/- 0.002 '     ' 0.789 +/- 0.001 '      ' 0.791 +/- 0.001 '  
     '    5000 '    ' 0.173 '     ' 0.340 '    ' 0.792 +/- 0.001 '     ' 0.793 +/- 0.001 '      ' 0.794 +/- 0.001 '  
     '   10000 '    ' 0.398 '     ' 0.398 '    ' 0.795 +/- 0.001 '     ' 0.796 +/- 0.000 '      ' 0.797 +/- 0.000 '  
     '  100000 '    '   NaN '     '   NaN '    ' 0.795 +/- 0.000 '     ' 0.797 +/- 0.000 '      ' 0.797 +/- 0.000 '  
@@ -91,21 +91,21 @@ ____________________________________
     Sample_Size      Cross_Stability         Number_Features        Feature_Stability 
     ___________    ___________________    _____________________    ___________________
 
-    '      50 '    ' 0.341 +/- 0.029 '    '  1.238 +/-  0.098 '    ' 0.035 +/- 0.013 '
-    '     100 '    ' 0.423 +/- 0.031 '    '  1.056 +/-  0.018 '    ' 0.062 +/- 0.032 '
-    '     200 '    ' 0.482 +/- 0.031 '    '  1.188 +/-  0.057 '    ' 0.046 +/- 0.031 '
-    '     300 '    ' 0.478 +/- 0.033 '    '  1.428 +/-  0.121 '    ' 0.041 +/- 0.025 '
-    '     400 '    ' 0.405 +/- 0.029 '    '  1.708 +/-  0.169 '    ' 0.049 +/- 0.024 '
-    '     500 '    ' 0.409 +/- 0.026 '    '  1.524 +/-  0.084 '    ' 0.053 +/- 0.032 '
-    '    1000 '    ' 0.282 +/- 0.018 '    '  2.506 +/-  0.202 '    ' 0.072 +/- 0.029 '
-    '    2000 '    ' 0.291 +/- 0.012 '    '  3.482 +/-  0.210 '    ' 0.099 +/- 0.033 '
-    '    5000 '    ' 0.439 +/- 0.019 '    '  6.946 +/-  0.206 '    ' 0.198 +/- 0.051 '
-    '   10000 '    ' 0.513 +/- 0.020 '    '  8.202 +/-  0.242 '    ' 0.234 +/- 0.059 '
-    '  100000 '    ' 0.495 +/- 0.017 '    '  7.632 +/-  0.155 '    ' 0.218 +/- 0.059 '
+    '      50 '    ' 0.327 +/- 0.032 '    '  1.224 +/-  0.054 '    ' 0.035 +/- 0.013 '
+    '     100 '    ' 0.410 +/- 0.031 '    '  1.080 +/-  0.029 '    ' 0.049 +/- 0.026 '
+    '     200 '    ' 0.485 +/- 0.031 '    '  1.186 +/-  0.058 '    ' 0.046 +/- 0.031 '
+    '     300 '    ' 0.475 +/- 0.033 '    '  1.428 +/-  0.122 '    ' 0.041 +/- 0.025 '
+    '     400 '    ' 0.405 +/- 0.029 '    '  1.708 +/-  0.171 '    ' 0.049 +/- 0.024 '
+    '     500 '    ' 0.409 +/- 0.026 '    '  1.524 +/-  0.085 '    ' 0.053 +/- 0.032 '
+    '    1000 '    ' 0.282 +/- 0.018 '    '  2.506 +/-  0.204 '    ' 0.072 +/- 0.029 '
+    '    2000 '    ' 0.291 +/- 0.012 '    '  3.482 +/-  0.212 '    ' 0.099 +/- 0.033 '
+    '    5000 '    ' 0.439 +/- 0.020 '    '  6.946 +/-  0.208 '    ' 0.198 +/- 0.051 '
+    '   10000 '    ' 0.513 +/- 0.020 '    '  8.202 +/-  0.245 '    ' 0.234 +/- 0.059 '
+    '  100000 '    ' 0.495 +/- 0.017 '    '  7.632 +/-  0.157 '    ' 0.218 +/- 0.059 '
 
 </pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% Performance on RedNet with RFE LINEAR.
+%% Performance on TIE-Net-Reduced1 with SVM-RFE.
 summary_perf('RedNet', 2)
 
 ##### SOURCE END #####
