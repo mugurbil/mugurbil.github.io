@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Feature Stability of GLL on TIE-Net-Weak2 with 100000 samples.</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-05"><meta name="DC.source" content="main.m"><style type="text/css">
+      --><title>Feature Stability of GLL on TIE-Net-Weak2 with 100000 samples.</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-13"><meta name="DC.source" content="main.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -67,7 +67,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
   </style></head><body><div class="content"><h1>Feature Stability of GLL on TIE-Net-Weak2 with 100000 samples.</h1><pre class="codeinput">unit_stability_type(100000, 1, <span class="string">"ErrNet"</span>)
-</pre><pre class="codeoutput">Figure 120. ROC for Stability of Strong Features AUC=0.975. Sample Size: 100000, HPC K 3.
+</pre><pre class="codeoutput">Figure 120. ROC for Stability of Strong Features AUC=0.974. Sample Size: 100000, HPC K 3.
 __________________________________________________________________________________________
 
 </pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <pre class="codeoutput">Table 120. Feature Stability of HPC K 3 on ErrNet with 100000 samples.
@@ -80,34 +80,39 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
     Feature_Number    Stability        Type        Path_Length    N_MBS    Equivalence
     ______________    _________    ____________    ___________    _____    ___________
 
-           20         ' 0.382 '    '  STRONG  '          3           0         18     
-           23         ' 0.382 '    '  STRONG  '          3           0         21     
-            6         ' 0.328 '    '  STRONG  '          3           0          1     
-           11         ' 0.266 '    '  STRONG  '          4           0          7     
-           17         ' 0.264 '    '  STRONG  '          4           1         12     
-           22         ' 0.240 '    '  STRONG  '          2           2         21     
-           19         ' 0.236 '    '  STRONG  '          2           4         18     
-            5         ' 0.200 '    '  STRONG  '          3           8          1     
-           16         ' 0.154 '    '  STRONG  '          2          16         12     
-           18         ' 0.142 '    '  STRONG  '          1          24         18     
-           21         ' 0.138 '    '  STRONG  '          1          36         21     
-           10         ' 0.136 '    '  STRONG  '          4          72          7     
-            9         ' 0.120 '    '  STRONG  '          3         108          7     
-            4         ' 0.114 '    '  STRONG  '          4         162          1     
-           15         ' 0.094 '    '  STRONG  '          3         243         12     
-            7         ' 0.074 '    '  STRONG  '          1         324          7     
-            8         ' 0.074 '    '  STRONG  '          2         405          7     
-           14         ' 0.074 '    '  STRONG  '          3         540         12     
-            2         ' 0.064 '    '  STRONG  '          2         720          1     
-            3         ' 0.054 '    '  STRONG  '          4         900          1     
-           12         ' 0.036 '    '  STRONG  '          1        1125         12     
-         1318         ' 0.036 '    '   weak   '          4        1125         39     
-           13         ' 0.030 '    '  STRONG  '          2        1350         12     
+           20         ' 0.506 '    '  STRONG  '          3           0         18     
+           23         ' 0.492 '    '  STRONG  '          3           0         21     
+            6         ' 0.426 '    '  STRONG  '          3           0          1     
+           11         ' 0.354 '    '  STRONG  '          4           0          7     
+           17         ' 0.334 '    '  STRONG  '          4           1         12     
+           22         ' 0.324 '    '  STRONG  '          2           2         21     
+           19         ' 0.302 '    '  STRONG  '          2           4         18     
+            5         ' 0.248 '    '  STRONG  '          3           8          1     
+           16         ' 0.210 '    '  STRONG  '          2          16         12     
+           18         ' 0.192 '    '  STRONG  '          1          24         18     
+           10         ' 0.186 '    '  STRONG  '          4          48          7     
+           21         ' 0.184 '    '  STRONG  '          1          72         21     
+            4         ' 0.158 '    '  STRONG  '          4         108          1     
+            9         ' 0.156 '    '  STRONG  '          3         162          7     
+           15         ' 0.118 '    '  STRONG  '          3         243         12     
+            8         ' 0.102 '    '  STRONG  '          2         324          7     
+           14         ' 0.102 '    '  STRONG  '          3         432         12     
+            2         ' 0.084 '    '  STRONG  '          2         576          1     
+            3         ' 0.084 '    '  STRONG  '          4         720          1     
+            7         ' 0.084 '    '  STRONG  '          1         900          7     
+           12         ' 0.048 '    '  STRONG  '          1        1125         12     
+           13         ' 0.048 '    '  STRONG  '          2        1350         12     
+         1318         ' 0.036 '    '   weak   '          4        1350         39     
           839         ' 0.026 '    '   weak   '          5        1350         28     
           657         ' 0.024 '    '   weak   '          5        1350         28     
+           47         ' 0.022 '    'irrelevant'        Inf        1350         47     
           164         ' 0.020 '    '   weak   '         11        1350         29     
-          720         ' 0.018 '    '   weak   '          4        1350         39     
-         1090         ' 0.014 '    '   weak   '          6        1350         49     
+          720         ' 0.020 '    '   weak   '          4        1350         39     
+          752         ' 0.020 '    '   weak   '          6        1350         49     
+           42         ' 0.018 '    'irrelevant'        Inf        1350         42     
+         1090         ' 0.016 '    '   weak   '          6        1350         49     
+         1099         ' 0.016 '    '   weak   '          5        1350         28     
+          174         ' 0.014 '    '   weak   '          4        1350         39     
          1258         ' 0.014 '    '   weak   '          9        1350         31     
            72         ' 0.012 '    '   weak   '          3        1350         41     
           371         ' 0.012 '    '   weak   '          5        1350         28     
@@ -115,70 +120,92 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           702         ' 0.012 '    '   weak   '          4        1350         51     
           788         ' 0.012 '    '   weak   '         11        1350         29     
           804         ' 0.012 '    '   weak   '          6        1350         49     
-         1099         ' 0.012 '    '   weak   '          5        1350         28     
+          943         ' 0.012 '    '   weak   '          5        1350         28     
          1246         ' 0.012 '    '   weak   '          6        1350         49     
          1255         ' 0.012 '    '   weak   '          5        1350         28     
-           42         ' 0.010 '    'irrelevant'        Inf        1350         42     
+           97         ' 0.010 '    '   weak   '          3        1350         40     
           117         ' 0.010 '    '   weak   '          8        1350         34     
           147         ' 0.010 '    '   weak   '          5        1350         38     
+          172         ' 0.010 '    '   weak   '          6        1350         37     
           175         ' 0.010 '    '   weak   '          3        1350         40     
+          237         ' 0.010 '    '   weak   '          4        1350         24     
           388         ' 0.010 '    '   weak   '          6        1350         49     
           624         ' 0.010 '    '   weak   '          4        1350         51     
          1285         ' 0.010 '    '   weak   '          8        1350         32     
            28         ' 0.008 '    '   weak   '          5        1350         28     
            38         ' 0.008 '    '   weak   '          5        1350         38     
            85         ' 0.008 '    '   weak   '          5        1350         28     
-          237         ' 0.008 '    '   weak   '          4        1350         24     
           341         ' 0.008 '    '   weak   '          4        1350         24     
           370         ' 0.008 '    '   weak   '          6        1350         27     
           407         ' 0.008 '    '   weak   '          5        1350         38     
           778         ' 0.008 '    '   weak   '          6        1350         49     
+          799         ' 0.008 '    '   weak   '          3        1350         40     
           813         ' 0.008 '    '   weak   '          5        1350         28     
           858         ' 0.008 '    '   weak   '          4        1350         51     
           862         ' 0.008 '    '   weak   '          6        1350         25     
          1006         ' 0.008 '    '   weak   '          4        1350         39     
+         1021         ' 0.008 '    '   weak   '          5        1350         28     
+         1040         ' 0.008 '    '   weak   '          4        1350         51     
+         1100         ' 0.008 '    '   weak   '         11        1350         29     
          1218         ' 0.008 '    '   weak   '          7        1350         46     
            43         ' 0.006 '    'irrelevant'        Inf        1350         43     
+           55         ' 0.006 '    '   weak   '          4        1350         24     
+          278         ' 0.006 '    '   weak   '          4        1350         39     
           440         ' 0.006 '    '   weak   '          6        1350         49     
+          501         ' 0.006 '    '   weak   '          5        1350         28     
           524         ' 0.006 '    '   weak   '          6        1350         25     
           608         ' 0.006 '    '   weak   '          9        1350         31     
           631         ' 0.006 '    '   weak   '          5        1350         28     
+          717         ' 0.006 '    '   weak   '          8        1350         36     
           735         ' 0.006 '    '   weak   '          5        1350         28     
+          787         ' 0.006 '    '   weak   '          5        1350         28     
           807         ' 0.006 '    '   weak   '          4        1350         52     
+          830         ' 0.006 '    '   weak   '          6        1350         49     
           917         ' 0.006 '    '   weak   '          5        1350         28     
+          918         ' 0.006 '    '   weak   '         11        1350         29     
           927         ' 0.006 '    '   weak   '          5        1350         38     
-          943         ' 0.006 '    '   weak   '          5        1350         28     
           960         ' 0.006 '    '   weak   '          6        1350         49     
+         1066         ' 0.006 '    '   weak   '          4        1350         51     
          1085         ' 0.006 '    '   weak   '          3        1350         40     
-         1100         ' 0.006 '    '   weak   '         11        1350         29     
          1126         ' 0.006 '    '   weak   '         11        1350         29     
          1155         ' 0.006 '    '   weak   '          8        1350         32     
          1177         ' 0.006 '    '   weak   '          5        1350         28     
          1187         ' 0.006 '    '   weak   '          5        1350         38     
          1197         ' 0.006 '    '   weak   '          4        1350         52     
          1200         ' 0.006 '    '   weak   '          6        1350         25     
+         1230         ' 0.006 '    '   weak   '         11        1350         29     
          1240         ' 0.006 '    '   weak   '          4        1350         39     
          1291         ' 0.006 '    '   weak   '          5        1350         38     
          1328         ' 0.006 '    '   weak   '          5        1350         53     
-           47         ' 0.004 '    'irrelevant'        Inf        1350         47     
+           36         ' 0.004 '    '   weak   '          8        1350         36     
+           40         ' 0.004 '    '   weak   '          3        1350         40     
+           70         ' 0.004 '    '   weak   '          4        1350         39     
+          111         ' 0.004 '    '   weak   '          5        1350         28     
           113         ' 0.004 '    '   weak   '         10        1350         30     
+          130         ' 0.004 '    '   weak   '          4        1350         51     
           156         ' 0.004 '    '   weak   '          4        1350         51     
           178         ' 0.004 '    '   weak   '          7        1350         46     
           208         ' 0.004 '    '   weak   '          4        1350         51     
-          278         ' 0.004 '    '   weak   '          4        1350         39     
+          232         ' 0.004 '    '   weak   '          6        1350         49     
           332         ' 0.004 '    '   weak   '          3        1350         41     
           362         ' 0.004 '    '   weak   '          6        1350         49     
+          402         ' 0.004 '    '   weak   '          8        1350         33     
           460         ' 0.004 '    '   weak   '          4        1350         39     
+          471         ' 0.004 '    '   weak   '          4        1350         24     
           492         ' 0.004 '    '   weak   '          6        1350         49     
           494         ' 0.004 '    '   weak   '          4        1350         51     
+          526         ' 0.004 '    '   weak   '          6        1350         27     
           585         ' 0.004 '    '   weak   '          8        1350         34     
           590         ' 0.004 '    '   weak   '          4        1350         39     
           591         ' 0.004 '    '   weak   '          3        1350         40     
           592         ' 0.004 '    '   weak   '          3        1350         41     
           622         ' 0.004 '    '   weak   '          6        1350         49     
+          643         ' 0.004 '    '   weak   '          3        1350         40     
           668         ' 0.004 '    '   weak   '          4        1350         39     
           687         ' 0.004 '    '   weak   '          8        1350         32     
           728         ' 0.004 '    '   weak   '          4        1350         51     
+          738         ' 0.004 '    '   weak   '          9        1350         31     
+          761         ' 0.004 '    '   weak   '          5        1350         28     
           849         ' 0.004 '    '   weak   '          5        1350         38     
           850         ' 0.004 '    '   weak   '          4        1350         39     
           856         ' 0.004 '    '   weak   '          6        1350         49     
@@ -188,22 +215,23 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           980         ' 0.004 '    '   weak   '          4        1350         39     
           992         ' 0.004 '    '   weak   '          6        1350         25     
          1008         ' 0.004 '    '   weak   '          3        1350         41     
-         1040         ' 0.004 '    '   weak   '          4        1350         51     
          1110         ' 0.004 '    '   weak   '          4        1350         39     
          1128         ' 0.004 '    '   weak   '          9        1350         31     
+         1143         ' 0.004 '    '   weak   '          5        1350         50     
          1151         ' 0.004 '    '   weak   '          5        1350         28     
          1173         ' 0.004 '    '   weak   '          4        1350         24     
          1188         ' 0.004 '    '   weak   '          4        1350         39     
          1272         ' 0.004 '    '   weak   '          6        1350         49     
          1307         ' 0.004 '    '   weak   '          5        1350         28     
-           36         ' 0.002 '    '   weak   '          8        1350         36     
            37         ' 0.002 '    '   weak   '          6        1350         37     
-           55         ' 0.002 '    '   weak   '          4        1350         24     
+           44         ' 0.002 '    'irrelevant'        Inf        1350         44     
            59         ' 0.002 '    '   weak   '          5        1350         28     
            74         ' 0.002 '    '   weak   '          7        1350         46     
            78         ' 0.002 '    '   weak   '          4        1350         51     
+           93         ' 0.002 '    '   weak   '          8        1350         36     
            96         ' 0.002 '    '   weak   '          4        1350         39     
           102         ' 0.002 '    '   weak   '          6        1350         49     
+          119         ' 0.002 '    '   weak   '          8        1350         36     
           120         ' 0.002 '    '   weak   '          6        1350         37     
           122         ' 0.002 '    '   weak   '          4        1350         39     
           124         ' 0.002 '    '   weak   '          3        1350         41     
@@ -214,25 +242,33 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           209         ' 0.002 '    '   weak   '          4        1350         52     
           213         ' 0.002 '    '   weak   '          5        1350         26     
           215         ' 0.002 '    '   weak   '          5        1350         28     
+          233         ' 0.002 '    '   weak   '          5        1350         50     
           258         ' 0.002 '    '   weak   '          6        1350         49     
+          259         ' 0.002 '    '   weak   '          5        1350         50     
           271         ' 0.002 '    '   weak   '          8        1350         32     
+          292         ' 0.002 '    '   weak   '          6        1350         27     
           294         ' 0.002 '    '   weak   '         11        1350         29     
           300         ' 0.002 '    '   weak   '          7        1350         35     
           310         ' 0.002 '    '   weak   '          6        1350         49     
+          319         ' 0.002 '    '   weak   '          5        1350         28     
           347         ' 0.002 '    '   weak   '         10        1350         30     
           372         ' 0.002 '    '   weak   '         11        1350         29     
           380         ' 0.002 '    '   weak   '          6        1350         37     
           383         ' 0.002 '    '   weak   '          3        1350         40     
           406         ' 0.002 '    '   weak   '          6        1350         37     
+          410         ' 0.002 '    '   weak   '          3        1350         41     
           420         ' 0.002 '    '   weak   '          6        1350         25     
+          422         ' 0.002 '    '   weak   '          6        1350         27     
           424         ' 0.002 '    '   weak   '         11        1350         29     
+          431         ' 0.002 '    '   weak   '          8        1350         36     
           433         ' 0.002 '    '   weak   '          5        1350         38     
+          434         ' 0.002 '    '   weak   '          4        1350         39     
           438         ' 0.002 '    '   weak   '          7        1350         46     
           459         ' 0.002 '    '   weak   '          5        1350         38     
+          476         ' 0.002 '    '   weak   '         11        1350         29     
           484         ' 0.002 '    '   weak   '          6        1350         37     
           488         ' 0.002 '    '   weak   '          3        1350         41     
           490         ' 0.002 '    '   weak   '          7        1350         46     
-          501         ' 0.002 '    '   weak   '          5        1350         28     
           511         ' 0.002 '    '   weak   '          5        1350         38     
           516         ' 0.002 '    '   weak   '          7        1350         46     
           540         ' 0.002 '    '   weak   '          3        1350         41     
@@ -242,32 +278,35 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           567         ' 0.002 '    '   weak   '          7        1350         45     
           579         ' 0.002 '    '   weak   '          5        1350         28     
           580         ' 0.002 '    '   weak   '         11        1350         29     
+          597         ' 0.002 '    '   weak   '          5        1350         50     
           620         ' 0.002 '    '   weak   '          7        1350         46     
           634         ' 0.002 '    '   weak   '          9        1350         31     
+          640         ' 0.002 '    '   weak   '          6        1350         37     
           658         ' 0.002 '    '   weak   '         11        1350         29     
           661         ' 0.002 '    '   weak   '          8        1350         32     
           684         ' 0.002 '    '   weak   '         11        1350         29     
           694         ' 0.002 '    '   weak   '          4        1350         39     
+          709         ' 0.002 '    '   weak   '          5        1350         28     
           719         ' 0.002 '    '   weak   '          5        1350         38     
           737         ' 0.002 '    '   weak   '         10        1350         30     
           750         ' 0.002 '    '   weak   '          7        1350         46     
-          752         ' 0.002 '    '   weak   '          6        1350         49     
-          761         ' 0.002 '    '   weak   '          5        1350         28     
           763         ' 0.002 '    '   weak   '         10        1350         30     
           783         ' 0.002 '    '   weak   '          4        1350         24     
-          787         ' 0.002 '    '   weak   '          5        1350         28     
+          795         ' 0.002 '    '   weak   '          8        1350         36     
           798         ' 0.002 '    '   weak   '          4        1350         39     
           800         ' 0.002 '    '   weak   '          3        1350         41     
-          830         ' 0.002 '    '   weak   '          6        1350         49     
+          806         ' 0.002 '    '   weak   '          4        1350         51     
           840         ' 0.002 '    '   weak   '         11        1350         29     
           845         ' 0.002 '    '   weak   '          8        1350         34     
           855         ' 0.002 '    '   weak   '          6        1350         48     
           867         ' 0.002 '    '   weak   '         10        1350         30     
+          873         ' 0.002 '    '   weak   '          8        1350         36     
           879         ' 0.002 '    '   weak   '          7        1350         45     
           882         ' 0.002 '    '   weak   '          6        1350         49     
           889         ' 0.002 '    '   weak   '          5        1350         26     
+          891         ' 0.002 '    '   weak   '          5        1350         28     
+          901         ' 0.002 '    '   weak   '          5        1350         38     
           911         ' 0.002 '    '   weak   '          4        1350         52     
-          918         ' 0.002 '    '   weak   '         11        1350         29     
           921         ' 0.002 '    '   weak   '          8        1350         32     
           936         ' 0.002 '    '   weak   '          4        1350         51     
           939         ' 0.002 '    '   weak   '          4        1350         24     
@@ -277,6 +316,7 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           975         ' 0.002 '    '   weak   '          8        1350         34     
           979         ' 0.002 '    '   weak   '          5        1350         38     
           986         ' 0.002 '    '   weak   '          6        1350         49     
+          991         ' 0.002 '    '   weak   '          4        1350         24     
           995         ' 0.002 '    '   weak   '          5        1350         28     
           996         ' 0.002 '    '   weak   '         11        1350         29     
          1003         ' 0.002 '    '   weak   '          8        1350         36     
@@ -285,19 +325,24 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1013         ' 0.002 '    '   weak   '          5        1350         50     
          1023         ' 0.002 '    '   weak   '         10        1350         30     
          1026         ' 0.002 '    '   weak   '          8        1350         33     
+         1039         ' 0.002 '    '   weak   '          5        1350         50     
          1041         ' 0.002 '    '   weak   '          4        1350         52     
          1044         ' 0.002 '    '   weak   '          6        1350         25     
          1045         ' 0.002 '    '   weak   '          5        1350         26     
+         1047         ' 0.002 '    '   weak   '          5        1350         28     
          1048         ' 0.002 '    '   weak   '         11        1350         29     
          1050         ' 0.002 '    '   weak   '          9        1350         31     
          1062         ' 0.002 '    '   weak   '          7        1350         46     
          1069         ' 0.002 '    '   weak   '          4        1350         24     
          1081         ' 0.002 '    '   weak   '          8        1350         36     
+         1084         ' 0.002 '    '   weak   '          4        1350         39     
          1107         ' 0.002 '    '   weak   '          8        1350         36     
          1112         ' 0.002 '    '   weak   '          3        1350         41     
          1138         ' 0.002 '    '   weak   '          3        1350         41     
          1142         ' 0.002 '    '   weak   '          6        1350         49     
+         1150         ' 0.002 '    '   weak   '          6        1350         27     
          1161         ' 0.002 '    '   weak   '          5        1350         38     
+         1170         ' 0.002 '    '   weak   '          4        1350         51     
          1172         ' 0.002 '    '   weak   '          5        1350         53     
          1216         ' 0.002 '    '   weak   '          3        1350         41     
          1242         ' 0.002 '    '   weak   '          3        1350         41     
@@ -306,6 +351,8 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1281         ' 0.002 '    '   weak   '          5        1350         28     
          1283         ' 0.002 '    '   weak   '         10        1350         30     
          1298         ' 0.002 '    '   weak   '          6        1350         49     
+         1299         ' 0.002 '    '   weak   '          5        1350         50     
+         1311         ' 0.002 '    '   weak   '          8        1350         32     
          1322         ' 0.002 '    '   weak   '          7        1350         46     
             1         ' 0.000 '    '  STRONG  '          1        1620          1     
            24         ' 0.000 '    '   weak   '          4        1620         24     
@@ -320,9 +367,7 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
            34         ' 0.000 '    '   weak   '          8        1620         34     
            35         ' 0.000 '    '   weak   '          7        1620         35     
            39         ' 0.000 '    '   weak   '          4        1620         39     
-           40         ' 0.000 '    '   weak   '          3        1620         40     
            41         ' 0.000 '    '   weak   '          3        1620         41     
-           44         ' 0.000 '    'irrelevant'        Inf        1620         44     
            45         ' 0.000 '    '   weak   '          7        1620         45     
            46         ' 0.000 '    '   weak   '          7        1620         46     
            48         ' 0.000 '    '   weak   '          6        1620         48     
@@ -344,7 +389,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
            67         ' 0.000 '    '   weak   '          8        1620         36     
            68         ' 0.000 '    '   weak   '          6        1620         37     
            69         ' 0.000 '    '   weak   '          5        1620         38     
-           70         ' 0.000 '    '   weak   '          4        1620         39     
            71         ' 0.000 '    '   weak   '          3        1620         40     
            73         ' 0.000 '    '   weak   '          7        1620         45     
            75         ' 0.000 '    '   weak   '          6        1620         48     
@@ -363,10 +407,8 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
            90         ' 0.000 '    '   weak   '          8        1620         33     
            91         ' 0.000 '    '   weak   '          8        1620         34     
            92         ' 0.000 '    '   weak   '          7        1620         35     
-           93         ' 0.000 '    '   weak   '          8        1620         36     
            94         ' 0.000 '    '   weak   '          6        1620         37     
            95         ' 0.000 '    '   weak   '          5        1620         38     
-           97         ' 0.000 '    '   weak   '          3        1620         40     
            98         ' 0.000 '    '   weak   '          3        1620         41     
            99         ' 0.000 '    '   weak   '          7        1620         45     
           100         ' 0.000 '    '   weak   '          7        1620         46     
@@ -379,13 +421,11 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           108         ' 0.000 '    '   weak   '          6        1620         25     
           109         ' 0.000 '    '   weak   '          5        1620         26     
           110         ' 0.000 '    '   weak   '          6        1620         27     
-          111         ' 0.000 '    '   weak   '          5        1620         28     
           112         ' 0.000 '    '   weak   '         11        1620         29     
           114         ' 0.000 '    '   weak   '          9        1620         31     
           115         ' 0.000 '    '   weak   '          8        1620         32     
           116         ' 0.000 '    '   weak   '          8        1620         33     
           118         ' 0.000 '    '   weak   '          7        1620         35     
-          119         ' 0.000 '    '   weak   '          8        1620         36     
           121         ' 0.000 '    '   weak   '          5        1620         38     
           123         ' 0.000 '    '   weak   '          3        1620         40     
           125         ' 0.000 '    '   weak   '          7        1620         45     
@@ -393,7 +433,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           127         ' 0.000 '    '   weak   '          6        1620         48     
           128         ' 0.000 '    '   weak   '          6        1620         49     
           129         ' 0.000 '    '   weak   '          5        1620         50     
-          130         ' 0.000 '    '   weak   '          4        1620         51     
           131         ' 0.000 '    '   weak   '          4        1620         52     
           132         ' 0.000 '    '   weak   '          5        1620         53     
           133         ' 0.000 '    '   weak   '          4        1620         24     
@@ -429,9 +468,7 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           169         ' 0.000 '    '   weak   '          8        1620         34     
           170         ' 0.000 '    '   weak   '          7        1620         35     
           171         ' 0.000 '    '   weak   '          8        1620         36     
-          172         ' 0.000 '    '   weak   '          6        1620         37     
           173         ' 0.000 '    '   weak   '          5        1620         38     
-          174         ' 0.000 '    '   weak   '          4        1620         39     
           176         ' 0.000 '    '   weak   '          3        1620         41     
           177         ' 0.000 '    '   weak   '          7        1620         45     
           179         ' 0.000 '    '   weak   '          6        1620         48     
@@ -482,8 +519,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           229         ' 0.000 '    '   weak   '          7        1620         45     
           230         ' 0.000 '    '   weak   '          7        1620         46     
           231         ' 0.000 '    '   weak   '          6        1620         48     
-          232         ' 0.000 '    '   weak   '          6        1620         49     
-          233         ' 0.000 '    '   weak   '          5        1620         50     
           234         ' 0.000 '    '   weak   '          4        1620         51     
           235         ' 0.000 '    '   weak   '          4        1620         52     
           236         ' 0.000 '    '   weak   '          5        1620         53     
@@ -507,7 +542,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           255         ' 0.000 '    '   weak   '          7        1620         45     
           256         ' 0.000 '    '   weak   '          7        1620         46     
           257         ' 0.000 '    '   weak   '          6        1620         48     
-          259         ' 0.000 '    '   weak   '          5        1620         50     
           260         ' 0.000 '    '   weak   '          4        1620         51     
           261         ' 0.000 '    '   weak   '          4        1620         52     
           262         ' 0.000 '    '   weak   '          5        1620         53     
@@ -538,7 +572,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           289         ' 0.000 '    '   weak   '          4        1620         24     
           290         ' 0.000 '    '   weak   '          6        1620         25     
           291         ' 0.000 '    '   weak   '          5        1620         26     
-          292         ' 0.000 '    '   weak   '          6        1620         27     
           293         ' 0.000 '    '   weak   '          5        1620         28     
           295         ' 0.000 '    '   weak   '         10        1620         30     
           296         ' 0.000 '    '   weak   '          9        1620         31     
@@ -562,7 +595,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           316         ' 0.000 '    '   weak   '          6        1620         25     
           317         ' 0.000 '    '   weak   '          5        1620         26     
           318         ' 0.000 '    '   weak   '          6        1620         27     
-          319         ' 0.000 '    '   weak   '          5        1620         28     
           320         ' 0.000 '    '   weak   '         11        1620         29     
           321         ' 0.000 '    '   weak   '         10        1620         30     
           322         ' 0.000 '    '   weak   '          9        1620         31     
@@ -634,13 +666,11 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           399         ' 0.000 '    '   weak   '         10        1620         30     
           400         ' 0.000 '    '   weak   '          9        1620         31     
           401         ' 0.000 '    '   weak   '          8        1620         32     
-          402         ' 0.000 '    '   weak   '          8        1620         33     
           403         ' 0.000 '    '   weak   '          8        1620         34     
           404         ' 0.000 '    '   weak   '          7        1620         35     
           405         ' 0.000 '    '   weak   '          8        1620         36     
           408         ' 0.000 '    '   weak   '          4        1620         39     
           409         ' 0.000 '    '   weak   '          3        1620         40     
-          410         ' 0.000 '    '   weak   '          3        1620         41     
           411         ' 0.000 '    '   weak   '          7        1620         45     
           412         ' 0.000 '    '   weak   '          7        1620         46     
           413         ' 0.000 '    '   weak   '          6        1620         48     
@@ -651,7 +681,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           418         ' 0.000 '    '   weak   '          5        1620         53     
           419         ' 0.000 '    '   weak   '          4        1620         24     
           421         ' 0.000 '    '   weak   '          5        1620         26     
-          422         ' 0.000 '    '   weak   '          6        1620         27     
           423         ' 0.000 '    '   weak   '          5        1620         28     
           425         ' 0.000 '    '   weak   '         10        1620         30     
           426         ' 0.000 '    '   weak   '          9        1620         31     
@@ -659,9 +688,7 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           428         ' 0.000 '    '   weak   '          8        1620         33     
           429         ' 0.000 '    '   weak   '          8        1620         34     
           430         ' 0.000 '    '   weak   '          7        1620         35     
-          431         ' 0.000 '    '   weak   '          8        1620         36     
           432         ' 0.000 '    '   weak   '          6        1620         37     
-          434         ' 0.000 '    '   weak   '          4        1620         39     
           435         ' 0.000 '    '   weak   '          3        1620         40     
           436         ' 0.000 '    '   weak   '          3        1620         41     
           437         ' 0.000 '    '   weak   '          7        1620         45     
@@ -694,12 +721,10 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           468         ' 0.000 '    '   weak   '          4        1620         51     
           469         ' 0.000 '    '   weak   '          4        1620         52     
           470         ' 0.000 '    '   weak   '          5        1620         53     
-          471         ' 0.000 '    '   weak   '          4        1620         24     
           472         ' 0.000 '    '   weak   '          6        1620         25     
           473         ' 0.000 '    '   weak   '          5        1620         26     
           474         ' 0.000 '    '   weak   '          6        1620         27     
           475         ' 0.000 '    '   weak   '          5        1620         28     
-          476         ' 0.000 '    '   weak   '         11        1620         29     
           477         ' 0.000 '    '   weak   '         10        1620         30     
           478         ' 0.000 '    '   weak   '          9        1620         31     
           479         ' 0.000 '    '   weak   '          8        1620         32     
@@ -740,7 +765,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           522         ' 0.000 '    '   weak   '          5        1620         53     
           523         ' 0.000 '    '   weak   '          4        1620         24     
           525         ' 0.000 '    '   weak   '          5        1620         26     
-          526         ' 0.000 '    '   weak   '          6        1620         27     
           527         ' 0.000 '    '   weak   '          5        1620         28     
           528         ' 0.000 '    '   weak   '         11        1620         29     
           529         ' 0.000 '    '   weak   '         10        1620         30     
@@ -800,7 +824,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           594         ' 0.000 '    '   weak   '          7        1620         46     
           595         ' 0.000 '    '   weak   '          6        1620         48     
           596         ' 0.000 '    '   weak   '          6        1620         49     
-          597         ' 0.000 '    '   weak   '          5        1620         50     
           598         ' 0.000 '    '   weak   '          4        1620         51     
           599         ' 0.000 '    '   weak   '          4        1620         52     
           600         ' 0.000 '    '   weak   '          5        1620         53     
@@ -837,10 +860,8 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           637         ' 0.000 '    '   weak   '          8        1620         34     
           638         ' 0.000 '    '   weak   '          7        1620         35     
           639         ' 0.000 '    '   weak   '          8        1620         36     
-          640         ' 0.000 '    '   weak   '          6        1620         37     
           641         ' 0.000 '    '   weak   '          5        1620         38     
           642         ' 0.000 '    '   weak   '          4        1620         39     
-          643         ' 0.000 '    '   weak   '          3        1620         40     
           644         ' 0.000 '    '   weak   '          3        1620         41     
           645         ' 0.000 '    '   weak   '          7        1620         45     
           646         ' 0.000 '    '   weak   '          7        1620         46     
@@ -898,7 +919,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           706         ' 0.000 '    '   weak   '          6        1620         25     
           707         ' 0.000 '    '   weak   '          5        1620         26     
           708         ' 0.000 '    '   weak   '          6        1620         27     
-          709         ' 0.000 '    '   weak   '          5        1620         28     
           710         ' 0.000 '    '   weak   '         11        1620         29     
           711         ' 0.000 '    '   weak   '         10        1620         30     
           712         ' 0.000 '    '   weak   '          9        1620         31     
@@ -906,7 +926,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           714         ' 0.000 '    '   weak   '          8        1620         33     
           715         ' 0.000 '    '   weak   '          8        1620         34     
           716         ' 0.000 '    '   weak   '          7        1620         35     
-          717         ' 0.000 '    '   weak   '          8        1620         36     
           718         ' 0.000 '    '   weak   '          6        1620         37     
           721         ' 0.000 '    '   weak   '          3        1620         40     
           722         ' 0.000 '    '   weak   '          3        1620         41     
@@ -922,7 +941,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           733         ' 0.000 '    '   weak   '          5        1620         26     
           734         ' 0.000 '    '   weak   '          6        1620         27     
           736         ' 0.000 '    '   weak   '         11        1620         29     
-          738         ' 0.000 '    '   weak   '          9        1620         31     
           739         ' 0.000 '    '   weak   '          8        1620         32     
           740         ' 0.000 '    '   weak   '          8        1620         33     
           741         ' 0.000 '    '   weak   '          8        1620         34     
@@ -971,15 +989,12 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           792         ' 0.000 '    '   weak   '          8        1620         33     
           793         ' 0.000 '    '   weak   '          8        1620         34     
           794         ' 0.000 '    '   weak   '          7        1620         35     
-          795         ' 0.000 '    '   weak   '          8        1620         36     
           796         ' 0.000 '    '   weak   '          6        1620         37     
           797         ' 0.000 '    '   weak   '          5        1620         38     
-          799         ' 0.000 '    '   weak   '          3        1620         40     
           801         ' 0.000 '    '   weak   '          7        1620         45     
           802         ' 0.000 '    '   weak   '          7        1620         46     
           803         ' 0.000 '    '   weak   '          6        1620         48     
           805         ' 0.000 '    '   weak   '          5        1620         50     
-          806         ' 0.000 '    '   weak   '          4        1620         51     
           808         ' 0.000 '    '   weak   '          5        1620         53     
           809         ' 0.000 '    '   weak   '          4        1620         24     
           810         ' 0.000 '    '   weak   '          6        1620         25     
@@ -1032,7 +1047,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           869         ' 0.000 '    '   weak   '          8        1620         32     
           870         ' 0.000 '    '   weak   '          8        1620         33     
           872         ' 0.000 '    '   weak   '          7        1620         35     
-          873         ' 0.000 '    '   weak   '          8        1620         36     
           874         ' 0.000 '    '   weak   '          6        1620         37     
           875         ' 0.000 '    '   weak   '          5        1620         38     
           876         ' 0.000 '    '   weak   '          4        1620         39     
@@ -1047,7 +1061,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           887         ' 0.000 '    '   weak   '          4        1620         24     
           888         ' 0.000 '    '   weak   '          6        1620         25     
           890         ' 0.000 '    '   weak   '          6        1620         27     
-          891         ' 0.000 '    '   weak   '          5        1620         28     
           892         ' 0.000 '    '   weak   '         11        1620         29     
           894         ' 0.000 '    '   weak   '          9        1620         31     
           895         ' 0.000 '    '   weak   '          8        1620         32     
@@ -1056,7 +1069,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           898         ' 0.000 '    '   weak   '          7        1620         35     
           899         ' 0.000 '    '   weak   '          8        1620         36     
           900         ' 0.000 '    '   weak   '          6        1620         37     
-          901         ' 0.000 '    '   weak   '          5        1620         38     
           902         ' 0.000 '    '   weak   '          4        1620         39     
           903         ' 0.000 '    '   weak   '          3        1620         40     
           904         ' 0.000 '    '   weak   '          3        1620         41     
@@ -1129,7 +1141,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
           988         ' 0.000 '    '   weak   '          4        1620         51     
           989         ' 0.000 '    '   weak   '          4        1620         52     
           990         ' 0.000 '    '   weak   '          5        1620         53     
-          991         ' 0.000 '    '   weak   '          4        1620         24     
           993         ' 0.000 '    '   weak   '          5        1620         26     
           994         ' 0.000 '    '   weak   '          6        1620         27     
           997         ' 0.000 '    '   weak   '         10        1620         30     
@@ -1150,7 +1161,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1018         ' 0.000 '    '   weak   '          6        1620         25     
          1019         ' 0.000 '    '   weak   '          5        1620         26     
          1020         ' 0.000 '    '   weak   '          6        1620         27     
-         1021         ' 0.000 '    '   weak   '          5        1620         28     
          1022         ' 0.000 '    '   weak   '         11        1620         29     
          1024         ' 0.000 '    '   weak   '          9        1620         31     
          1025         ' 0.000 '    '   weak   '          8        1620         32     
@@ -1166,11 +1176,9 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1036         ' 0.000 '    '   weak   '          7        1620         46     
          1037         ' 0.000 '    '   weak   '          6        1620         48     
          1038         ' 0.000 '    '   weak   '          6        1620         49     
-         1039         ' 0.000 '    '   weak   '          5        1620         50     
          1042         ' 0.000 '    '   weak   '          5        1620         53     
          1043         ' 0.000 '    '   weak   '          4        1620         24     
          1046         ' 0.000 '    '   weak   '          6        1620         27     
-         1047         ' 0.000 '    '   weak   '          5        1620         28     
          1049         ' 0.000 '    '   weak   '         10        1620         30     
          1051         ' 0.000 '    '   weak   '          8        1620         32     
          1052         ' 0.000 '    '   weak   '          8        1620         33     
@@ -1186,7 +1194,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1063         ' 0.000 '    '   weak   '          6        1620         48     
          1064         ' 0.000 '    '   weak   '          6        1620         49     
          1065         ' 0.000 '    '   weak   '          5        1620         50     
-         1066         ' 0.000 '    '   weak   '          4        1620         51     
          1067         ' 0.000 '    '   weak   '          4        1620         52     
          1068         ' 0.000 '    '   weak   '          5        1620         53     
          1070         ' 0.000 '    '   weak   '          6        1620         25     
@@ -1202,7 +1209,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1080         ' 0.000 '    '   weak   '          7        1620         35     
          1082         ' 0.000 '    '   weak   '          6        1620         37     
          1083         ' 0.000 '    '   weak   '          5        1620         38     
-         1084         ' 0.000 '    '   weak   '          4        1620         39     
          1086         ' 0.000 '    '   weak   '          3        1620         41     
          1087         ' 0.000 '    '   weak   '          7        1620         45     
          1088         ' 0.000 '    '   weak   '          7        1620         46     
@@ -1250,14 +1256,12 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1139         ' 0.000 '    '   weak   '          7        1620         45     
          1140         ' 0.000 '    '   weak   '          7        1620         46     
          1141         ' 0.000 '    '   weak   '          6        1620         48     
-         1143         ' 0.000 '    '   weak   '          5        1620         50     
          1144         ' 0.000 '    '   weak   '          4        1620         51     
          1145         ' 0.000 '    '   weak   '          4        1620         52     
          1146         ' 0.000 '    '   weak   '          5        1620         53     
          1147         ' 0.000 '    '   weak   '          4        1620         24     
          1148         ' 0.000 '    '   weak   '          6        1620         25     
          1149         ' 0.000 '    '   weak   '          5        1620         26     
-         1150         ' 0.000 '    '   weak   '          6        1620         27     
          1152         ' 0.000 '    '   weak   '         11        1620         29     
          1153         ' 0.000 '    '   weak   '         10        1620         30     
          1154         ' 0.000 '    '   weak   '          9        1620         31     
@@ -1274,7 +1278,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1167         ' 0.000 '    '   weak   '          6        1620         48     
          1168         ' 0.000 '    '   weak   '          6        1620         49     
          1169         ' 0.000 '    '   weak   '          5        1620         50     
-         1170         ' 0.000 '    '   weak   '          4        1620         51     
          1171         ' 0.000 '    '   weak   '          4        1620         52     
          1174         ' 0.000 '    '   weak   '          6        1620         25     
          1175         ' 0.000 '    '   weak   '          5        1620         26     
@@ -1325,7 +1328,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1227         ' 0.000 '    '   weak   '          5        1620         26     
          1228         ' 0.000 '    '   weak   '          6        1620         27     
          1229         ' 0.000 '    '   weak   '          5        1620         28     
-         1230         ' 0.000 '    '   weak   '         11        1620         29     
          1231         ' 0.000 '    '   weak   '         10        1620         30     
          1232         ' 0.000 '    '   weak   '          9        1620         31     
          1233         ' 0.000 '    '   weak   '          8        1620         32     
@@ -1381,7 +1383,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1295         ' 0.000 '    '   weak   '          7        1620         45     
          1296         ' 0.000 '    '   weak   '          7        1620         46     
          1297         ' 0.000 '    '   weak   '          6        1620         48     
-         1299         ' 0.000 '    '   weak   '          5        1620         50     
          1300         ' 0.000 '    '   weak   '          4        1620         51     
          1301         ' 0.000 '    '   weak   '          4        1620         52     
          1302         ' 0.000 '    '   weak   '          5        1620         53     
@@ -1392,7 +1393,6 @@ TOTAL COUNTS:    Strong=23, Weak=1300, Irrelevant=4
          1308         ' 0.000 '    '   weak   '         11        1620         29     
          1309         ' 0.000 '    '   weak   '         10        1620         30     
          1310         ' 0.000 '    '   weak   '          9        1620         31     
-         1311         ' 0.000 '    '   weak   '          8        1620         32     
          1312         ' 0.000 '    '   weak   '          8        1620         33     
          1313         ' 0.000 '    '   weak   '          8        1620         34     
          1314         ' 0.000 '    '   weak   '          7        1620         35     
