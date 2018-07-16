@@ -1,0 +1,40 @@
+
+
+h1 {
+    display: block;
+    font-size: 1.8em;
+    margin-top: 0.87em;
+    margin-bottom: 0.87em;
+    margin-right: 0;
+    font-weight: bold;
+    color: #990000;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0.5cm;
+    margin-right: 0;
+    font-weight: bold;
+    color: #D35400;
+}
+
+a:link, a:visited {
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    color: blue;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+html {
+    margin-left: 100px;
+}
