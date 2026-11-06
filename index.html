@@ -4,172 +4,332 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mehmet Ugurbil</title>
-  <meta name="description" content="Mehmet Ugurbil — Machine Learning Engineer at Google. Privacy-preserving machine learning, secure computation, and Bayesian sampling.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23b4441f'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='Georgia,serif'>MU</text></svg>">
+  <meta name="description" content="Mehmet Ugurbil — Machine Learning Engineer at Google working on privacy-preserving machine learning, secure computation, and Bayesian sampling.">
+  <meta property="og:title" content="Mehmet Ugurbil">
+  <meta property="og:description" content="Machine Learning Engineer at Google. Private LLM inference, MPC, FHE.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/10779659?v=4">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23b4441f'/><text x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='600'>MU</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
-<main>
 
-  <header class="intro">
-    <img class="avatar" src="https://avatars.githubusercontent.com/u/10779659?v=4" alt="Mehmet Ugurbil" width="96" height="96">
-    <div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="mark" href="#top" aria-label="Back to top">MU</a>
+    <nav class="sections" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#software">Software</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow"><span class="dot"></span>Machine Learning Engineer at Google</p>
       <h1>Mehmet Ugurbil</h1>
-      <p class="role">Machine Learning Engineer · Google · SF Bay Area</p>
-      <nav class="links">
-        <a href="https://scholar.google.com/citations?user=hYJP53wAAAAJ&amp;hl=en">Scholar</a>
-        <a href="https://github.com/mugurbil">GitHub</a>
-        <a href="https://eprint.iacr.org/search?q=Ugurbil">IACR ePrint</a>
-      </nav>
+      <p class="tagline">I work on making large models run on data <em>nobody has to reveal</em>, at the intersection of machine learning and cryptography.</p>
+      <div class="buttons">
+        <a class="btn primary" href="https://scholar.google.com/citations?user=hYJP53wAAAAJ&amp;hl=en">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9.5l11 6.5 9-5.3V17h2V9.5L12 3zm-6.5 9.8V17c0 1.9 3 3.5 6.5 3.5s6.5-1.6 6.5-3.5v-4.2L12 16.6l-6.5-3.8z"/></svg>
+          Google Scholar
+        </a>
+        <a class="btn" href="https://github.com/mugurbil">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4 18.3 4.3 18.3 4.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://eprint.iacr.org/search?q=Ugurbil">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm0 5a2.5 2.5 0 0 1 1 4.8V16h-2v-4.2A2.5 2.5 0 0 1 12 7z"/></svg>
+          IACR ePrint
+        </a>
+      </div>
+      <p class="location">SF Bay Area</p>
     </div>
-  </header>
+    <div class="hero-portrait">
+      <img src="https://avatars.githubusercontent.com/u/10779659?v=4" alt="Mehmet Ugurbil" width="220" height="220">
+    </div>
+  </section>
 
-  <section>
-    <p class="lede">
-      I build machine learning systems at Google. My research sits where
-      <strong>machine learning meets cryptography</strong>: making large models
-      run on data nobody has to reveal, using secure multi-party computation (MPC)
-      and fully homomorphic encryption (FHE).
+  <!-- About -->
+  <section class="about reveal">
+    <p>
+      I build machine learning systems at Google. My research is on
+      <strong>privacy-preserving machine learning</strong>: secure multi-party
+      computation (MPC) and fully homomorphic encryption (FHE) that are fast enough
+      to run modern models, LLMs included.
     </p>
     <p>
       A recurring idea in my work is using <em>wavelet approximations</em> to make
       non-linear functions cheap under encryption. It started with programmable
-      bootstrapping for FHE (Ripple), then went into mixed-mode MPC (Wave Hello),
-      and then into private LLM inference (Curl, Fission). Before that I worked on
-      Markov chain Monte Carlo for Bayesian inverse problems, health informatics,
-      and MRI reconstruction.
+      bootstrapping for FHE, went into mixed-mode MPC, and then into private LLM
+      inference. Before that I worked on Markov chain Monte Carlo for Bayesian
+      inverse problems, clinical risk prediction, and MRI reconstruction.
     </p>
   </section>
 
-  <section>
-    <h2>Interests</h2>
-    <ul class="tags">
-      <li>Privacy-preserving ML</li>
-      <li>Secure multi-party computation</li>
-      <li>Homomorphic encryption</li>
-      <li>Private LLM inference</li>
-      <li>MCMC &amp; Bayesian inference</li>
-      <li>ML for healthcare</li>
-    </ul>
+  <!-- Research themes -->
+  <section id="research" class="reveal">
+    <h2><span class="num">01</span>Research</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </div>
+        <h3>Private LLM inference</h3>
+        <p>Running transformer inference across servers that never see the prompt, the activations, or the output.</p>
+        <p class="refs"><a href="https://eprint.iacr.org/2024/1127">Curl</a><a href="https://eprint.iacr.org/2025/653">Fission</a></p>
+      </article>
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3"/></svg>
+        </div>
+        <h3>Wavelets for secure computation</h3>
+        <p>Using compact wavelet approximations of non-linear functions to make lookup tables cheap in FHE and MPC.</p>
+        <p class="refs"><a href="https://eprint.iacr.org/2024/866">Ripple</a><a href="https://eprint.iacr.org/2025/013">Wave Hello</a></p>
+      </article>
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.2 7.2 10.8 16M15.8 7.2 13.2 16M8.5 6h7"/></svg>
+        </div>
+        <h3>MPC protocols</h3>
+        <p>Building blocks for secret-shared computation: comparisons, truncation, sums of products, threshold signatures and private histograms.</p>
+        <p class="refs"><a href="https://doi.org/10.62056/a0ivr-zn4">Paras</a><a href="https://eprint.iacr.org/2023/1934">Comparisons</a><a href="https://eprint.iacr.org/2023/1740">Sum-of-products</a></p>
+      </article>
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M4 20c2-1 3-12 8-12s6 11 8 12"/></svg>
+        </div>
+        <h3>Bayesian sampling &amp; health ML</h3>
+        <p>Affine-invariant MCMC for stiff posteriors, and risk models for clinical prediction with missing data.</p>
+        <p class="refs"><a href="https://arxiv.org/abs/2001.03530">DGNM</a><a href="https://github.com/mugurbil/gnm">gnm</a><a href="https://doi.org/10.1016/j.jbi.2020.103379">JBI 2020</a></p>
+      </article>
+    </div>
   </section>
 
-  <section>
-    <h2>Publications</h2>
+  <!-- Publications -->
+  <section id="publications" class="reveal">
+    <h2><span class="num">02</span>Publications</h2>
 
-    <ol class="pubs">
-      <li>
-        <a class="title" href="https://doi.org/10.62056/a0ivr-zn4">Paras: Actively Secure Two-Server Private Histograms</a>
-        <span class="authors">Dimitris Mouris, Lucas Piske, Pratik Sarkar, Ni Trieu, <b>Mehmet Ugurbil</b></span>
-        <span class="venue">IACR Communications in Cryptology · 2026</span>
-      </li>
-      <li>
-        <a class="title" href="https://eprint.iacr.org/2025/653">Fission: Distributed Privacy-Preserving Large Language Model Inference</a>
-        <span class="authors"><b>Mehmet Ugurbil</b>, Dimitris Mouris, Manuel B. Santos, José Cabrero-Holgueras, Miguel de Vega, Shubho Sengupta</span>
-        <span class="venue">IEEE Conference on Communications and Network Security (CNS) · 2025</span>
-      </li>
-      <li>
-        <a class="title" href="https://doi.org/10.56553/popets-2025-0083">Wave Hello to Privacy: Efficient Mixed-Mode MPC using Wavelet Transforms</a>
-        <span class="authors">José Reis, <b>Mehmet Ugurbil</b>, Sameer Wagh, Ryan Henry, Miguel de Vega</span>
-        <span class="venue">Proceedings on Privacy Enhancing Technologies (PoPETs) · 2025</span>
-      </li>
-      <li>
-        <a class="title" href="https://eprint.iacr.org/2024/1127">Curl: Private LLMs through Wavelet-Encoded Look-Up Tables</a>
-        <span class="authors">Manuel B. Santos, Dimitris Mouris, <b>Mehmet Ugurbil</b>, Stanislaw Jarecki, José Reis, Shubho Sengupta, Miguel de Vega</span>
-        <span class="venue">Conference on Applied Machine Learning for Information Security (CAMLIS) · 2024</span>
-      </li>
-      <li>
-        <a class="title" href="https://doi.org/10.1007/978-3-031-75757-0_14">Ripple: Accelerating Programmable Bootstraps for FHE with Wavelet Approximations</a>
-        <span class="authors">Charles Gouert, <b>Mehmet Ugurbil</b>, Dimitris Mouris, Miguel de Vega, Nektarios Georgios Tsoutsos</span>
-        <span class="venue">Information Security Conference (ISC) · 2024</span>
-      </li>
-      <li>
-        <a class="title" href="https://eprint.iacr.org/2023/1934">More Efficient Comparison Protocols for MPC</a>
-        <span class="authors">Wicher Malten, <b>Mehmet Ugurbil</b>, Miguel de Vega</span>
-        <span class="venue">IACR ePrint · 2023</span>
-      </li>
-      <li>
-        <a class="title" href="https://eprint.iacr.org/2023/1740">Evaluation of Arithmetic Sum-of-Products Expressions in Linear Secret Sharing Schemes with a Non-Interactive Computation Phase</a>
-        <span class="authors">Miguel de Vega, Andrei Lapets, Stanislaw Jarecki, Wicher Malten, <b>Mehmet Ugurbil</b>, Wyatt Howe</span>
-        <span class="venue">IACR ePrint · 2023</span>
-      </li>
-      <li>
-        <a class="title" href="https://doi.org/10.1016/j.jbi.2020.103379">Multiple Predictively Equivalent Risk Models for Handling Missing Data at Time of Prediction: With an Application in Severe Hypoglycemia Risk Prediction for Type 2 Diabetes</a>
-        <span class="authors">Sisi Ma, Pamela J. Schreiner, Elizabeth R. Seaquist, <b>Mehmet Ugurbil</b>, Rachel Zmora, Lisa S. Chow</span>
-        <span class="venue">Journal of Biomedical Informatics · 2020</span>
-      </li>
-      <li>
-        <a class="title" href="https://arxiv.org/abs/2001.03530">Dynamic Gauss Newton Metropolis Algorithm</a>
-        <span class="authors"><b>Mehmet Ugurbil</b></span>
-        <span class="venue">arXiv · 2019</span>
-      </li>
-      <li>
-        <a class="title" href="https://doi.org/10.1200/jco.2018.36.15_suppl.e13072">Impact of Bariatric Surgery on Breast Cancer Disease Burden in the Obese Breast Cancer Survivor</a>
-        <span class="authors">Anne H. Blaes, György Simon, <b>Mehmet Ugurbil</b>, Gretchen K. Sieger, Sayeed Ikramuddin</span>
-        <span class="venue">Journal of Clinical Oncology (ASCO abstract) · 2018</span>
-      </li>
-    </ol>
+    <div class="filters" role="group" aria-label="Filter publications">
+      <button type="button" class="chip active" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="crypto">Privacy &amp; cryptography</button>
+      <button type="button" class="chip" data-filter="ml">ML &amp; health</button>
+      <button type="button" class="chip" data-filter="stats">Statistics &amp; math</button>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2026</span>
+      <ul class="pubs">
+        <li data-topic="crypto">
+          <a class="title" href="https://doi.org/10.62056/a0ivr-zn4">Paras: Actively Secure Two-Server Private Histograms</a>
+          <span class="authors">Dimitris Mouris, Lucas Piske, Pratik Sarkar, Ni Trieu, <b>Mehmet Ugurbil</b></span>
+          <span class="meta"><span class="venue">IACR Communications in Cryptology</span><a class="pill" href="https://doi.org/10.62056/a0ivr-zn4">Paper</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2025</span>
+      <ul class="pubs">
+        <li data-topic="crypto ml">
+          <a class="title" href="https://eprint.iacr.org/2025/653">Fission: Distributed Privacy-Preserving Large Language Model Inference</a>
+          <span class="authors"><b>Mehmet Ugurbil</b>, Dimitris Mouris, Manuel B. Santos, José Cabrero-Holgueras, Miguel de Vega, Shubho Sengupta</span>
+          <span class="meta"><span class="venue">IEEE CNS</span><a class="pill" href="https://eprint.iacr.org/2025/653">ePrint</a></span>
+        </li>
+        <li data-topic="crypto">
+          <a class="title" href="https://doi.org/10.56553/popets-2025-0083">Wave Hello to Privacy: Efficient Mixed-Mode MPC using Wavelet Transforms</a>
+          <span class="authors">José Reis, <b>Mehmet Ugurbil</b>, Sameer Wagh, Ryan Henry, Miguel de Vega</span>
+          <span class="meta"><span class="venue">PoPETs</span><a class="pill" href="https://doi.org/10.56553/popets-2025-0083">Paper</a><a class="pill" href="https://eprint.iacr.org/2025/013">ePrint</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2024</span>
+      <ul class="pubs">
+        <li data-topic="crypto ml">
+          <a class="title" href="https://eprint.iacr.org/2024/1127">Curl: Private LLMs through Wavelet-Encoded Look-Up Tables</a>
+          <span class="authors">Manuel B. Santos, Dimitris Mouris, <b>Mehmet Ugurbil</b>, Stanislaw Jarecki, José Reis, Shubho Sengupta, Miguel de Vega</span>
+          <span class="meta"><span class="venue">CAMLIS</span><a class="pill" href="https://eprint.iacr.org/2024/1127">ePrint</a></span>
+        </li>
+        <li data-topic="crypto">
+          <a class="title" href="https://doi.org/10.1007/978-3-031-75757-0_14">Ripple: Accelerating Programmable Bootstraps for FHE with Wavelet Approximations</a>
+          <span class="authors">Charles Gouert, <b>Mehmet Ugurbil</b>, Dimitris Mouris, Miguel de Vega, Nektarios Georgios Tsoutsos</span>
+          <span class="meta"><span class="venue">Information Security Conference (ISC)</span><a class="pill" href="https://doi.org/10.1007/978-3-031-75757-0_14">Paper</a><a class="pill" href="https://eprint.iacr.org/2024/866">ePrint</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2023</span>
+      <ul class="pubs">
+        <li data-topic="crypto">
+          <a class="title" href="https://eprint.iacr.org/2023/1934">More Efficient Comparison Protocols for MPC</a>
+          <span class="authors">Wicher Malten, <b>Mehmet Ugurbil</b>, Miguel de Vega</span>
+          <span class="meta"><span class="venue">Preprint</span><a class="pill" href="https://eprint.iacr.org/2023/1934">ePrint</a></span>
+        </li>
+        <li data-topic="crypto">
+          <a class="title" href="https://eprint.iacr.org/2023/1740">Evaluation of Arithmetic Sum-of-Products Expressions in Linear Secret Sharing Schemes with a Non-Interactive Computation Phase</a>
+          <span class="authors">Miguel de Vega, Andrei Lapets, Stanislaw Jarecki, Wicher Malten, <b>Mehmet Ugurbil</b>, Wyatt Howe</span>
+          <span class="meta"><span class="venue">Preprint</span><a class="pill" href="https://eprint.iacr.org/2023/1740">ePrint</a></span>
+        </li>
+        <li data-topic="crypto ml">
+          <a class="title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hYJP53wAAAAJ&amp;citation_for_view=hYJP53wAAAAJ:hqOjcs7Dif8C">Secure Truncation with Applications to LLM Quantization</a>
+          <span class="authors"><b>Mehmet Ugurbil</b>, Miguel de Vega, Wicher Malten, Manuel B. Santos</span>
+          <span class="meta"><span class="venue">Technical report</span></span>
+        </li>
+        <li data-topic="crypto">
+          <a class="title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hYJP53wAAAAJ&amp;citation_for_view=hYJP53wAAAAJ:Se3iqnhoufwC">Threshold ECDSA in the Preprocessing Setup</a>
+          <span class="authors">Manuel B. Santos, Miguel de Vega, Wicher Malten, <b>Mehmet Ugurbil</b>, N. Regnault</span>
+          <span class="meta"><span class="venue">Technical report</span></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2020</span>
+      <ul class="pubs">
+        <li data-topic="ml">
+          <a class="title" href="https://doi.org/10.1016/j.jbi.2020.103379">Multiple Predictively Equivalent Risk Models for Handling Missing Data at Time of Prediction: With an Application in Severe Hypoglycemia Risk Prediction for Type 2 Diabetes</a>
+          <span class="authors">Sisi Ma, Pamela J. Schreiner, Elizabeth R. Seaquist, <b>Mehmet Ugurbil</b>, Rachel Zmora, Lisa S. Chow</span>
+          <span class="meta"><span class="venue">Journal of Biomedical Informatics</span><a class="pill" href="https://doi.org/10.1016/j.jbi.2020.103379">Paper</a></span>
+        </li>
+        <li data-topic="stats">
+          <a class="title" href="https://ascl.net/2001.015">gnm: The MCMC Jagger</a>
+          <span class="authors"><b>Mehmet Ugurbil</b></span>
+          <span class="meta"><span class="venue">Astrophysics Source Code Library</span><a class="pill" href="https://ascl.net/2001.015">ASCL</a><a class="pill" href="https://github.com/mugurbil/gnm">Code</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2019</span>
+      <ul class="pubs">
+        <li data-topic="stats">
+          <a class="title" href="https://arxiv.org/abs/2001.03530">Dynamic Gauss Newton Metropolis Algorithm</a>
+          <span class="authors"><b>Mehmet Ugurbil</b></span>
+          <span class="meta"><span class="venue">arXiv</span><a class="pill" href="https://arxiv.org/abs/2001.03530">arXiv</a><a class="pill" href="https://github.com/mugurbil/gnm">Code</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2018</span>
+      <ul class="pubs">
+        <li data-topic="ml">
+          <a class="title" href="https://doi.org/10.1200/jco.2018.36.15_suppl.e13072">Impact of Bariatric Surgery on Breast Cancer Disease Burden in the Obese Breast Cancer Survivor</a>
+          <span class="authors">Anne H. Blaes, György Simon, <b>Mehmet Ugurbil</b>, Gretchen K. Sieger, Sayeed Ikramuddin</span>
+          <span class="meta"><span class="venue">Journal of Clinical Oncology (ASCO abstract)</span><a class="pill" href="https://doi.org/10.1200/jco.2018.36.15_suppl.e13072">Paper</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-year">
+      <span class="year">2013</span>
+      <ul class="pubs">
+        <li data-topic="stats">
+          <a class="title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hYJP53wAAAAJ&amp;citation_for_view=hYJP53wAAAAJ:u5HHmVD_uO8C">Functional Analysis, Unbounded Operators, and Quantum Mechanics</a>
+          <span class="authors"><b>Mehmet Ugurbil</b></span>
+          <span class="meta"><span class="venue">Thesis, Lake Forest College</span></span>
+        </li>
+      </ul>
+    </div>
   </section>
 
-  <section>
-    <h2>Technical Reports &amp; Theses</h2>
-    <ol class="pubs">
-      <li>
-        <a class="title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hYJP53wAAAAJ&amp;citation_for_view=hYJP53wAAAAJ:hqOjcs7Dif8C">Secure Truncation with Applications to LLM Quantization</a>
-        <span class="authors"><b>Mehmet Ugurbil</b>, Miguel de Vega, Wicher Malten, Manuel B. Santos</span>
-        <span class="venue">Technical report · 2023</span>
-      </li>
-      <li>
-        <a class="title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hYJP53wAAAAJ&amp;citation_for_view=hYJP53wAAAAJ:Se3iqnhoufwC">Threshold ECDSA in the Preprocessing Setup</a>
-        <span class="authors">Manuel B. Santos, Miguel de Vega, Wicher Malten, <b>Mehmet Ugurbil</b>, N. Regnault</span>
-        <span class="venue">Technical report · 2023</span>
-      </li>
-      <li>
-        <a class="title" href="https://ascl.net/2001.015">gnm: The MCMC Jagger</a>
-        <span class="authors"><b>Mehmet Ugurbil</b></span>
-        <span class="venue">Astrophysics Source Code Library, ascl:2001.015 · 2020</span>
-      </li>
-      <li>
-        <a class="title" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hYJP53wAAAAJ&amp;citation_for_view=hYJP53wAAAAJ:u5HHmVD_uO8C">Functional Analysis, Unbounded Operators, and Quantum Mechanics</a>
-        <span class="authors"><b>Mehmet Ugurbil</b></span>
-        <span class="venue">Lake Forest College · 2013</span>
-      </li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Software</h2>
-    <ul class="projects">
-      <li>
-        <a href="https://github.com/mugurbil/gnm">gnm</a>
-        <span>A fast, affine-invariant MCMC sampler for nonlinear inverse problems and stiff Bayesian posteriors (<a href="https://arxiv.org/abs/2001.03530">paper</a>, <a href="https://ascl.net/2001.015">ASCL</a>).</span>
-      </li>
-      <li>
-        <a href="https://github.com/mugurbil/chat">chat</a>
-        <span>Chat with LLMs served by Ollama over the network.</span>
-      </li>
-      <li>
-        <a href="https://github.com/mugurbil/informatics">informatics</a>
-        <span>A toolkit for machine learning and statistics.</span>
-      </li>
-      <li>
-        <a href="https://github.com/mugurbil/Coil-Compression">Coil-Compression</a>
-        <span>Coil compression algorithms for magnetic resonance imaging.</span>
-      </li>
-      <li>
-        <a href="https://causeffect.github.io">Causality</a>
-        <span>An earlier project on causal inference.</span>
-      </li>
-    </ul>
+  <!-- Software -->
+  <section id="software" class="reveal">
+    <h2><span class="num">03</span>Software</h2>
+    <div class="repos">
+      <a class="repo" href="https://github.com/mugurbil/gnm">
+        <span class="repo-name">gnm</span>
+        <span class="repo-desc">A fast, affine-invariant MCMC sampler for nonlinear inverse problems and stiff Bayesian posteriors.</span>
+        <span class="repo-tag">MCMC</span>
+      </a>
+      <a class="repo" href="https://github.com/mugurbil/chat">
+        <span class="repo-name">chat</span>
+        <span class="repo-desc">Chat with LLMs served by Ollama over the network.</span>
+        <span class="repo-tag">LLM tooling</span>
+      </a>
+      <a class="repo" href="https://github.com/mugurbil/informatics">
+        <span class="repo-name">informatics</span>
+        <span class="repo-desc">A toolkit for machine learning and statistics.</span>
+        <span class="repo-tag">ML &amp; stats</span>
+      </a>
+      <a class="repo" href="https://github.com/mugurbil/Coil-Compression">
+        <span class="repo-name">Coil-Compression</span>
+        <span class="repo-desc">Coil compression algorithms for magnetic resonance imaging.</span>
+        <span class="repo-tag">MRI</span>
+      </a>
+      <a class="repo" href="https://causeffect.github.io">
+        <span class="repo-name">Causality</span>
+        <span class="repo-desc">An earlier project on causal inference.</span>
+        <span class="repo-tag">Web</span>
+      </a>
+    </div>
   </section>
 
   <footer>
-    <img src="giphy.gif" alt="" width="56" height="56" loading="lazy">
+    <img src="giphy.gif" alt="" width="44" height="44" loading="lazy">
     <span>© 2026 Mehmet Ugurbil</span>
+    <a href="#top">Back to top ↑</a>
   </footer>
 
 </main>
+
+<script>
+  // Theme toggle
+  (function () {
+    var root = document.documentElement;
+    document.querySelector('.theme-toggle').addEventListener('click', function () {
+      var dark = root.dataset.theme
+        ? root.dataset.theme === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    });
+  })();
+
+  // Publication filters
+  (function () {
+    var chips = document.querySelectorAll('.chip');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var f = chip.dataset.filter;
+        chips.forEach(function (c) { c.classList.toggle('active', c === chip); });
+        document.querySelectorAll('.pubs li').forEach(function (li) {
+          li.hidden = f !== 'all' && li.dataset.topic.split(' ').indexOf(f) === -1;
+        });
+        document.querySelectorAll('.pub-year').forEach(function (y) {
+          y.hidden = !y.querySelector('li:not([hidden])');
+        });
+      });
+    });
+  })();
+
+  // Gentle reveal on scroll
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+</script>
 </body>
 </html>
